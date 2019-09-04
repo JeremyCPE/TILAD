@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/style.css">
+		<title>Login</title>
+		<script src="js/javascript.js"></script>
+		<script src="js/login.js"></script>
+	</head>
+	<body onload="session()">
+	<header>
+		<h1>Agence de Voyage</h1>
+	</header>
+		
+	<nav>
+		<a href="index.html" >Accueil</a>
+		<a href="login.html" id="active">Login</a>
+  		<a href="reservation.html">Réservation</a>
+  		<a href="contact.html">Contact</a>
+	</nav>
+		<div id="login">
+		</div>
+
+	<div id="main">
+
+
+	<div id="background_content">
+		<form>
+    	<label for="username">Username:</label>
+    	<input type="text" id="username" name="username"><br>
+    	<label for="pass">Password (4 characters minimum):</label>
+    	<input type="password" id="pass" name="pass"
+           minlength="4" required> <br>
+    	<button type="submit" onclick="login()">Login</button> 
+		</form>
+	</div>
+	</div>
+	</body>
+</html>

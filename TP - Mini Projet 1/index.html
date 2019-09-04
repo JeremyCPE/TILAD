@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/style.css">
+		<title>Agence de voyage</title>
+		<script src="js/filtre.js"></script>
+		<script src="js/login.js"></script>
+	</head>
+	<body onload="init(); session();">
+	<header>
+		<h1>Agence de Voyage</h1>
+	</header>
+		
+	<nav>
+		<a href="index.html" id="active">Accueil</a>
+		<a href="login.html" >Login</a>
+  		<a href="reservation.html">Réservation</a>
+  		<a href="contact.html">Contact</a>
+	</nav>
+	<div id="login">
+	</div>
+	<div id="title"><h1>Nos séjours</h1></div>
+
+	<div id="main">
+	
+		<div id="filtre">
+			<form onchange="filtre()">
+			<p>Destination : <input type="text" id="dest" name="dest"></p>
+			<br>
+			<p>Prix : <input type="number" id="price" name="price" min=1></p>
+			<br>
+			<p>Enfants : <input type="checkbox" id="child" name="child"></p>
+			<br>
+			<p>Petit déjeuner : <input type="checkbox" id="breakfast" name="breakfast"></p>
+			<input type="submit" value="Chercher" onclick="filtre()">
+			</form>
+		</div>
+		<div id="list">
+
+		</div>
+	</div>
+
+
+	<footer>
+		<a href="contact.html">Nous contacter</a>
+		<a href="about.html">A propos</a>
+	</footer>
+
+	</body>
+</html>
