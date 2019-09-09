@@ -1,0 +1,177 @@
+aside{
+	
+	position:relative;
+	background: rgba(240,250,240,0.6);
+	
+}
+
+aside ul{
+	
+	
+	
+}
+
+aside ul li{
+	
+	display:inline;
+	margin-left: 5%;
+	
+}
+
+ul.tabRep{
+	margin:0;
+	padding:0;
+	font-size: small;
+	text-align:center;
+}
+
+#recap{
+position:fixed;
+float:right;
+top:2%;
+right: 2%;
+margin-left: 1%;
+width: 25%;
+min-width:200px;
+clear:both;
+
+background: rgba(240,250,240,0.6);
+}
+
+#cmd{
+width:75%;
+min-width:400px;
+}
+
+body{
+	background: rgba(180,234,190,0.5);
+	background-image: url("zenBG-1.png"), url("zenBG-2.png");
+	background-repeat: repeat-x, repeat;
+}
+
+#content{
+background: rgba(240,250,240,0.6);
+min-width:640px;
+margin-left: 10%;
+margin-right: 10%;
+width: 75%;
+
+padding:1%;
+}
+
+p.info{
+	text-align:justify;
+	font-weight: bolder;
+	width: 50%;
+	color: brown;
+}
+
+p.warning{
+	text-align:justify;
+	font-weight: bolder;
+	color: brown;
+}
+
+
+
+div#howto{
+	width: 50%;
+	text-align:justify;
+}
+
+div.inputMer{
+	width: 20%;
+	float: left;
+	filter : alpha(opacity=50);
+	opacity : 1.6;
+	background: rgba(240,250,240,0.6);
+}
+
+div.inputPatho{
+	background: rgba(240,250,240,0.6);	
+}
+
+div.actionPatho{
+	width: 30%;
+	margin-right: 1%;
+	padding: 1%;
+	float: left;
+	border: 1px solid gray;
+	background: rgba(240,250,240,0.6);
+}
+
+form li{
+	list-style:none;
+}
+
+#questions input.search {
+padding: 0.5% 0.5%;
+width: 30%;
+height: 2%;
+border: 1px solid #AAA;
+}
+
+#questions input.search:hover, #questions input.search:focus {
+border-color: #777;
+}
+
+#questions div.result {
+display: none;
+width: 31%;
+border: 1px solid #AAA;
+border-top-width: 0;
+background-color: #FFF;
+}
+
+div#questions div.result ul {
+	padding: 0.5% 0.5%;
+	text-align: left;
+	border: 0;
+	background-color: #FFF;
+	margin:0;
+}
+#questions li{
+list-style:none;
+}
+#questions div.result li{
+list-style:none;
+padding-left:1%;
+background-color: #FFF;
+}
+
+#questions div.result li:hover, #questions .result_focus {
+background-color: #DDD !important;
+}
+
+.error{
+	color:red;
+}
+.missing{
+	color:orange;
+}
+.good{
+	color:green;
+}
+
+.img{
+	float: left;
+	margin-right:5%;
+}
+.lsympt{
+	min-height: 350px;
+	margin-left: 5%;
+}
+
+.dev {
+	filter : alpha(opacity=50);
+	opacity : 0.6;
+}
+
+p.imgCmd{
+	text-align: center;
+}
+
+p.imgCmd img{
+	height: 150px;
+}
+
