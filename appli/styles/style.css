@@ -1,104 +1,177 @@
+aside{
+	
+	position:relative;
+	background: rgba(240,250,240,0.6);
+	
+}
+
+aside ul{
+	
+	
+	
+}
+
+aside ul li{
+	
+	display:inline;
+	margin-left: 5%;
+	
+}
+
+ul.tabRep{
+	margin:0;
+	padding:0;
+	font-size: small;
+	text-align:center;
+}
+
+#recap{
+position:fixed;
+float:right;
+top:2%;
+right: 2%;
+margin-left: 1%;
+width: 25%;
+min-width:200px;
+clear:both;
+
+background: rgba(240,250,240,0.6);
+}
+
+#cmd{
+width:75%;
+min-width:400px;
+}
+
 body{
-	margin: auto;
-	font-family: Norton;
+	background: rgba(180,234,190,0.5);
+	background-image: url("zenBG-1.png"), url("zenBG-2.png");
+	background-repeat: repeat-x, repeat;
 }
 
-form{
-	margin: auto;
-	width : 300px;
+#content{
+background: rgba(240,250,240,0.6);
+min-width:640px;
+margin-left: 10%;
+margin-right: 10%;
+width: 75%;
+
+padding:1%;
 }
 
-nav a{
-	border-left: 1px grey solid;
+p.info{
+	text-align:justify;
+	font-weight: bolder;
+	width: 50%;
+	color: brown;
+}
+
+p.warning{
+	text-align:justify;
+	font-weight: bolder;
+	color: brown;
+}
+
+
+
+div#howto{
+	width: 50%;
+	text-align:justify;
+}
+
+div.inputMer{
+	width: 20%;
 	float: left;
-	background-color: #247ba0;
-	color: white;
+	filter : alpha(opacity=50);
+	opacity : 1.6;
+	background: rgba(240,250,240,0.6);
+}
+
+div.inputPatho{
+	background: rgba(240,250,240,0.6);	
+}
+
+div.actionPatho{
+	width: 30%;
+	margin-right: 1%;
+	padding: 1%;
+	float: left;
+	border: 1px solid gray;
+	background: rgba(240,250,240,0.6);
+}
+
+form li{
+	list-style:none;
+}
+
+#questions input.search {
+padding: 0.5% 0.5%;
+width: 30%;
+height: 2%;
+border: 1px solid #AAA;
+}
+
+#questions input.search:hover, #questions input.search:focus {
+border-color: #777;
+}
+
+#questions div.result {
+display: none;
+width: 31%;
+border: 1px solid #AAA;
+border-top-width: 0;
+background-color: #FFF;
+}
+
+div#questions div.result ul {
+	padding: 0.5% 0.5%;
+	text-align: left;
+	border: 0;
+	background-color: #FFF;
+	margin:0;
+}
+#questions li{
+list-style:none;
+}
+#questions div.result li{
+list-style:none;
+padding-left:1%;
+background-color: #FFF;
+}
+
+#questions div.result li:hover, #questions .result_focus {
+background-color: #DDD !important;
+}
+
+.error{
+	color:red;
+}
+.missing{
+	color:orange;
+}
+.good{
+	color:green;
+}
+
+.img{
+	float: left;
+	margin-right:5%;
+}
+.lsympt{
+	min-height: 350px;
+	margin-left: 5%;
+}
+
+.dev {
+	filter : alpha(opacity=50);
+	opacity : 0.6;
+}
+
+p.imgCmd{
 	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
 }
 
-nav{
-	background-color: #247ba0;
-	display: inline-block;
-	width: 100%;
+p.imgCmd img{
+	height: 150px;
 }
 
-nav a:hover{
-	background-color: #b2dbbf;
-}
-
-#active{
-	background-color: #70c1b3;
-	color: black;
-}
-
-#main{
-	width: 600px;
-	margin: auto;
-	text-align: center;
-	background-image: url('images/wallpaper.jpg');
-	background-repeat: repeat;
-	padding-left: 200px;
-	padding-right: 200px;
-}
-
-.destination {
-	font-size: 30px;
-	position: relative;
-	margin-bottom: 50px;
-	margin-top: 50px;
-}
-
-.topleft{
-	background-color: rgba(255,255,255,0.3);
-	position: absolute;
-	top: 15px;
-	margin-left: 3%;
-}
-
-.bottomright{
-	background-color: rgba(255,255,255,0.3);
-	position: absolute;
-	margin-left: 46%;
-	bottom: 15px;
-}
-
-footer{
-	background-color: #247ba0;
-	height: 100px;
-	width : 99%;
-	margin: auto;
-	border-radius: 10px;
-	text-align: center;
-}
-
-footer a{
-	display: inline-block;
-	margin-top : 35px;
-	text-decoration : none;
-	padding-right : 20px;
-	padding-left: 20px;
-	font-size : 2em;
-}
-
-a {
-	color : #000000;
-}
-
-a:visited{
-	color: #000000;
-}
-
-#title{
-	text-align: center;
-	font-size : 25px;
-}
-
-#background_content{
-	background-color: white;
-}
-
-#filtre{
-	background-color: white;
-}
