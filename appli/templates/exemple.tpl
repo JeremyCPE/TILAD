@@ -105,24 +105,7 @@
 				<input type="button" value="Tout cocher" onclick="this.value=check('fs_mer')">
 				</fieldset>
 				
-				<fieldset id="fs_patho" class="inputPatho">
-					<legend>Pathologies</legend>
-					<div class="inputPatho">
-						
-						<input type="checkbox" name="fp_me" id="fp_me" checked="checked"/><label for="fp_me">Méridien externe</label>
-						
-						<input type="checkbox" name="fp_mi" id="fp_mi"/><label for="fp_mi">Méridien interne</label>
-						
-						<input type="checkbox" name="fp_tf" id="fp_tf" checked="checked"/><label for="fp_tf">Zang/Fu</label>
-						
-						<input type="checkbox" name="fp_l" id="fp_l"/><label for="fp_l">Voie Luo</label>
-						
-						<input type="checkbox" name="fp_j" id="fp_j"/><label for="fp_j">Jin Jing</label>
-						
-						<input type="checkbox" name="fp_mv" id="fp_mv"/><label for="fp_mv">Merveilleux Vaisseaux</label>
-						
-					</div>
-				</fieldset>
+				{include file='recherche.tpl'}
 				
 				<fieldset>
 					<legend>Que souhaitez-vous?</legend>
