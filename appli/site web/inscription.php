@@ -19,6 +19,7 @@ if(!empty($_POST['pseudo']) && !empty($_POST['password'])){
 	$sql = "INSERT INTO utilisateur (pseudo,password) VALUES (:pseudo,:password)";
 	$stmt = $bdd->prepare($sql);
 	$stmt->bindParam(':pseudo', $_POST['pseudo'],PDO::PARAM_STR, 255);
+
 	$secure_password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 	$stmt->bindParam(':password', $secure_password,PDO::PARAM_STR, 255);
 	if( $stmt->execute() ):
@@ -26,11 +27,7 @@ if(!empty($_POST['pseudo']) && !empty($_POST['password'])){
 	else:
 		$message = 'Erreur sur lutilisateur';
 	endif;
-	//}
-	//else
-	//{
-	//	$message = 'Password non identique';
-	//}
+
 }
 ?>
 
@@ -42,12 +39,12 @@ if(!empty($_POST['pseudo']) && !empty($_POST['password'])){
 		<link rel="stylesheet" href="style.css">
 		<title>Inscription</title>
 	</head>
-	
+
 	<header>
 		<h1>Titre</h1>
 	</header>
 
-	<menu>	
+	<menu>
 		<nav>
 			<a href="accueil.php" id="active">Accueil</a>
 			<a href="principale.php" id="active">Pathologies principales</a>
@@ -56,10 +53,10 @@ if(!empty($_POST['pseudo']) && !empty($_POST['password'])){
 		</nav>
 	</menu>
 
-	<body>	
+	<body>
 	<div id="title"><h1>S'inscrire</h1></div>
 
-		<?php 
+		<?php
 			//echo "Message : ";
 			echo "<p>".$message."</p>";
 		?>
@@ -73,7 +70,7 @@ if(!empty($_POST['pseudo']) && !empty($_POST['password'])){
 				<input title="Nom" type="text" name="name"  placeholder="Nom" required><br>
 				Prenom<br>
 				<input title="Prenom" type="text" name="name"  placeholder="Prenom" required><br>
-				Adresse email :<br> 
+				Adresse email :<br>
 				<input title ="mail" type="email" name="mail"  placeholder="blblabla@mail.com" required><br>
 				N° téléphone :<br>
 				<input title="Telephone" type="tel" name="tel" pattern="[0-9]{10}" placeholder="0123456789" required><br>
