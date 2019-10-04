@@ -11,7 +11,7 @@
 	<body>
 	<div id="content">
 		<p>Pas de template associé</p>
-		<p>Essayez peut-être <a href="http://localhost/appli/?action=test">http://localhost/appli/?action=test</a>?</p>
+		<p>Essayez peut-être <a href="http://localhost/appli/?action=accueil">Accueil du site</a>?</p>
 	</div>
 </body>
 </html>
