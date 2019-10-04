@@ -46,7 +46,7 @@ class Router
 		}
 		if($this-> action="symptome")
 		{
-			$this->getSymptone();
+			$this->getSymptome();
 		}
 		return $ret;
 	}
