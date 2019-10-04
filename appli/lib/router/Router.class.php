@@ -15,7 +15,8 @@ class Router
 	const mapTpl = array(
 		"test" => "templates/exemple.tpl",
 		"recherche" => "templates/recherche.tpl",
-		"meridien" => "templates/meridien.tpl"
+		"meridien" => "templates/meridien.tpl",
+		"symptone" => "templates/symptone.tpl",
 	);
 	
 	function __construct($smarty,$action ){
@@ -37,11 +38,15 @@ class Router
 		}
 		if($this-> action="recherche")
 		{
-			$this->getRecherche();
+			$this->getPatho();
 		}
 		if($this-> action="meridien")
 		{
 			$this->getMeridien();
+		}
+		if($this-> action="symptone")
+		{
+			$this->getSymptone();
 		}
 		return $ret;
 	}
@@ -53,7 +58,7 @@ class Router
 		
 	}
 
-	function getRecherche()
+	function getPatho()
 	{
 		$this->smarty->assign("arrayPatho",pathoController::getAllPatho());
 
@@ -62,6 +67,11 @@ class Router
 	function getMeridien()
 	{
 		$this->smarty->assign("arrayMeridien",meridienController::getAllMeridiens());
+	}
+
+	function getSymptone()
+	{
+		$this->smarty->assign("arraySymptone",symptoneControllerr::getSymptone());
 	}
 }
 
