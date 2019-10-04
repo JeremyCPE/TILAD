@@ -14,10 +14,12 @@ class Router
 	private $action = "";
 	const mapTpl = array(
 		"accueil" => "templates/accueil.tpl",
+		"recherche_patho" =>"template/recherche_patho.tpl",
+		"recherche_symptome" => "template/recherche_symptome",
+		"patho_prcp" => "templates/patho_prcp.tpl",
 		"pathologie" => "templates/pathologie.tpl",
 		"meridien" => "templates/meridien.tpl",
 		"symptome" => "templates/symptome.tpl",
-		"patho_prcp" => "templates/patho_prcp",
 		"keywords"	=> "templates/keywords.tpl",
 	);
 	
