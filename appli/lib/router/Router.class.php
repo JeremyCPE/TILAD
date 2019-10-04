@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Controller/rechercheController.php' ;
+require_once 'controller/rechercheController.php' ;
 /**
 	Routeur de base
 	Mettre à jour la map mapTpl pour l'ajout d'une nouvelle vue
