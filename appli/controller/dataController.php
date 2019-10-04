@@ -25,9 +25,9 @@ require_once('lib/bd/bd.class.php');
 
     //recupèrer les symptones en fonction des patho
 
-    class symptoneController
+    class symptomeController
     {
-        public static function getSymptone()
+        public static function getSymptome()
         {
             $maBD = new BD();
             $resultat = $maBD->requete("

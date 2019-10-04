@@ -14,7 +14,7 @@ class Router
 	private $action = "";
 	const mapTpl = array(
 		"test" => "templates/exemple.tpl",
-		"recherche" => "templates/recherche.tpl",
+		"pathologie" => "templates/pathologie.tpl",
 		"meridien" => "templates/meridien.tpl",
 		"symptone" => "templates/symptone.tpl",
 	);
@@ -32,11 +32,11 @@ class Router
 			$ret = Router::mapTpl[$this->action];
 			$this->todo();
 		}
-		if($this-> action="pathologie")
+		if($this-> action="test")
 		{
 			$this->smarty->assign("Test","Tsssst");
 		}
-		if($this-> action="recherche")
+		if($this-> action="pathologie")
 		{
 			$this->getPatho();
 		}
@@ -44,7 +44,7 @@ class Router
 		{
 			$this->getMeridien();
 		}
-		if($this-> action="symptone")
+		if($this-> action="symptome")
 		{
 			$this->getSymptone();
 		}
@@ -71,7 +71,7 @@ class Router
 
 	function getSymptone()
 	{
-		$this->smarty->assign("arraySymptone",symptoneControllerr::getSymptone());
+		$this->smarty->assign("arraySymptome",symptomeController::getSymptome());
 	}
 }
 
