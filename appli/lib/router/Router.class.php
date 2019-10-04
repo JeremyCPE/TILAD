@@ -69,7 +69,7 @@ class Router
 		$this->smarty->assign("arrayMeridien",meridienController::getAllMeridiens());
 	}
 
-	function getSymptone()
+	function getSymptome()
 	{
 		$this->smarty->assign("arraySymptome",symptomeController::getSymptome());
 	}
