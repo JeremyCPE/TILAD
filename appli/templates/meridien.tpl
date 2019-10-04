@@ -1,5 +1,5 @@
 <div class="inputMer">
-       <ul>
+    <ul>
         {foreach from=$arrayMeridien item=meridien}
             <li><input type="checkbox" name="f{$meridien.code}" id="f{$meridien.code}" checked="checked"/><label for="f{$meridien.code}">{$meridien.nom}</label></li>
         {/foreach}
