@@ -13,9 +13,10 @@
 		<aside>
 			<div id="menu">
 				<ul>
-					<li><a href="http://acupuncture.mascret.fr/index.php?action=accueil">Accueil</a></li>
-					<li><a href="http://acupuncture.mascret.fr/index.php?action=truc">Truc</a></li>
-					<li><a href="http://acupuncture.mascret.fr/index.php?action=pathos">pathologies</a></li>
+					<li><a href="http://localhost/appli/?action=accueil">Accueil</a></li>
+					<li><a href="http://localhost/appli/?action=recherche_patho">Recherche par pathologie</a></li>
+					<li><a href="http://localhost/appli/?action=recherche_symptome">Recherche par symptome</a></li>
+					<li><a href="http://localhost/appli/?action=patho_prcp">Pathologie principales</a></li>
 				</ul>
 			</div>
 		</aside>

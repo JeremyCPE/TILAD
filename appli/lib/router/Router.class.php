@@ -13,10 +13,11 @@ class Router
 	private $smarty = null;
 	private $action = "";
 	const mapTpl = array(
-		"test" => "templates/exemple.tpl",
+		"accueil" => "templates/accueil.tpl",
 		"pathologie" => "templates/pathologie.tpl",
 		"meridien" => "templates/meridien.tpl",
 		"symptome" => "templates/symptome.tpl",
+		"patho_prcp" => "templates/patho_prcp",
 	);
 	
 	function __construct($smarty,$action ){
@@ -32,7 +33,7 @@ class Router
 			$ret = Router::mapTpl[$this->action];
 			$this->todo();
 		}
-		if($this-> action="test")
+		if($this-> action="accueil")
 		{
 			$this->smarty->assign("Test","Tsssst");
 		}
