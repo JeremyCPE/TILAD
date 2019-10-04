@@ -16,7 +16,7 @@ class Router
 		"test" => "templates/exemple.tpl",
 		"pathologie" => "templates/pathologie.tpl",
 		"meridien" => "templates/meridien.tpl",
-		"symptone" => "templates/symptone.tpl",
+		"symptome" => "templates/symptome.tpl",
 	);
 	
 	function __construct($smarty,$action ){
