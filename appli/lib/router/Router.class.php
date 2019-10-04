@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Controller/dataController.php' ;
+require_once 'controller/dataController.php' ;
 /**
 	Routeur de base
 	Mettre à jour la map mapTpl pour l'ajout d'une nouvelle vue
