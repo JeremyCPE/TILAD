@@ -27,14 +27,14 @@ require_once('lib/bd/bd.class.php');
 
     class symptomeController
     {
-        public static function getSymptome()
+        public static function getSymptome(pathologie)
         {
             $maBD = new BD();
             $resultat = $maBD->requete("
                     SELECT symptome.desc FROM symptPatho 
                     inner join symptome on symptPatho.idS = symptome.idS
                     inner join patho on symptPatho.idP = patho.idP
-                    WHERE patho.desc ='zang poumon froid' ");
+                    WHERE patho.desc = pathologie");
             return $resultat;
         }
     }
