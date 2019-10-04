@@ -1,8 +1,10 @@
 <?php
 require_once('lib/bd/bd.class.php');
-    class rechercheController
+    
+    // récupèrer toute les pathologies
+    class pathoController
     {
-        public static function chercheAll()
+        public static function getAllPatho()
         {
             $maBD = new BD();
             $resultat = $maBD->requete("SELECT `desc` FROM patho");
@@ -10,12 +12,29 @@ require_once('lib/bd/bd.class.php');
         }
     }
 
+    // recupèrer tout les méridiens
     class meridienController
     {
         public static function getAllMeridiens()
         {
             $maBD = new BD();
             $resultat = $maBD->requete("SELECT `nom`,`code` FROM meridien");
+            return $resultat;
+        }
+    }
+
+    //recupèrer les symptones en fonction des patho
+
+    class symptoneController
+    {
+        public static function getSymptone()
+        {
+            $maBD = new BD();
+            $resultat = $maBD->requete("
+                    SELECT symptome.desc FROM symptPatho 
+                    inner join symptome on symptPatho.idS = symptome.idS
+                    inner join patho on symptPatho.idP = patho.idP
+                    WHERE patho.desc ='zang poumon froid' ");
             return $resultat;
         }
     }

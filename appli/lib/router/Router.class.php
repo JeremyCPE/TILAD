@@ -55,7 +55,7 @@ class Router
 
 	function getRecherche()
 	{
-		$this->smarty->assign("arrayPatho",rechercheController::chercheAll());
+		$this->smarty->assign("arrayPatho",pathoController::getAllPatho());
 
 	}
 
