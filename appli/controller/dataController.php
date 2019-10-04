@@ -37,5 +37,18 @@ require_once('lib/bd/bd.class.php');
                     WHERE patho.desc = ".$pathologie);
             return $resultat;
         }
+
+        public static function searchKeywords()
+        {
+            $maBD = new BD();
+            $resultat = $maBD->requete("
+                    SELECT name,symptome.desc,patho.desc FROM keywords 
+                    inner join keySympt on keySympt.idK = keywords.idK 
+                    inner join symptome on symptome.idS = keySympt.idS 
+                    inner join symptPatho on symptPatho.idS = symptome.ids 
+                    inner join patho on patho.idP = symptPatho.idP
+                    WHERE keywords.name='abdomen' ");
+            return $resultat; 
+        }
     }
 ?>
