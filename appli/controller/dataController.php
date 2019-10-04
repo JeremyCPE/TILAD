@@ -74,21 +74,21 @@ require_once('lib/bd/bd.class.php');
                 die('Erreur : '.$e->getMessage());
         }
 
-        if(!empty($pseudo) && !empty($password)){
+        if(!empty($pseudo) && !empty($password)) {
           $sql = "INSERT INTO utilisateur (`pseudo`,`password`) VALUES (:pseudo,:password)";
           $stmt = $bdd->prepare($sql);
           $stmt->bindParam(':pseudo', $pseudo,PDO::PARAM_STR, 255);
           $secure_password = password_hash($password, PASSWORD_BCRYPT);
           $stmt->bindParam(':password', $secure_password,PDO::PARAM_STR, 255);
-          if( $stmt->execute() ):
+          if( $stmt->execute()) {
             $message = 'Nouvel utilisateur créee';
-          else:
+          }
+          else {
             $message = 'Erreur sur lutilisateur';
-          endif;
-
-          return $message;
+          }
 
         }
+        return $message;
       }
-      
+  }
 ?>
