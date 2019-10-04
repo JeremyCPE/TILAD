@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Controller/rechercheController.php' ;
+require_once 'Controller/dataController.php' ;
 /**
 	Routeur de base
 	Mettre à jour la map mapTpl pour l'ajout d'une nouvelle vue
@@ -14,7 +14,8 @@ class Router
 	private $action = "";
 	const mapTpl = array(
 		"test" => "templates/exemple.tpl",
-		"recherche" => "templates/recherche.tpl"
+		"recherche" => "templates/recherche.tpl",
+		"meridien" => "templates/meridien.tpl"
 	);
 	
 	function __construct($smarty,$action ){
@@ -38,6 +39,10 @@ class Router
 		{
 			$this->getRecherche();
 		}
+		if($this-> action="meridien")
+		{
+			$this->getMeridien();
+		}
 		return $ret;
 	}
 	
@@ -52,6 +57,11 @@ class Router
 	{
 		$this->smarty->assign("arrayPatho",rechercheController::chercheAll());
 
+	}
+
+	function getMeridien()
+	{
+		$this->smarty->assign("arrayMeridien",meridienController::getAllMeridiens());
 	}
 }
 

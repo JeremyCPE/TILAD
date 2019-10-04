@@ -9,4 +9,14 @@ require_once('lib/bd/bd.class.php');
             return $resultat;
         }
     }
+
+    class meridienController
+    {
+        public static function getAllMeridiens()
+        {
+            $maBD = new BD();
+            $resultat = $maBD->requete("SELECT `nom`,`code` FROM meridien");
+            return $resultat;
+        }
+    }
 ?>
