@@ -18,6 +18,7 @@ class Router
 		"meridien" => "templates/meridien.tpl",
 		"symptome" => "templates/symptome.tpl",
 		"patho_prcp" => "templates/patho_prcp",
+		"keywords"	=> "templates/keywords.tpl",
 	);
 	
 	function __construct($smarty,$action ){
@@ -49,6 +50,10 @@ class Router
 		{
 			$this->getSymptome();
 		}
+		if($this-> action="keywords")
+		{
+			$this->searchKeywords();
+		}
 		return $ret;
 	}
 	
@@ -73,6 +78,11 @@ class Router
 	function getSymptome()
 	{
 		$this->smarty->assign("arraySymptome",symptomeController::getSymptome());
+	}
+
+	function searchKeywords()
+	{
+		$this->smarty->assign("arrayKeywords",symptomeController::searchKeywords());
 	}
 }
 
