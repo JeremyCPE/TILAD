@@ -60,8 +60,13 @@ class Router
 
 	function getPatho()
 	{
-		$this->smarty->assign("arrayPatho",pathoController::getAllPatho());
+		$this->smarty->assign("arrayPatho",pathoController::getAllTypePatho());
+	}
 
+	function getTypePatho()
+	{
+		$type = array("me","mi");
+		$this->smarty->assign("arrayPatho",pathoController::getPathoEnFonctionType($type));
 	}
 
 	function getMeridien()
