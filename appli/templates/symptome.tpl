@@ -1,7 +1,7 @@
 <div class="">
        <ul>
         {foreach from=$arraySymptome item=symptome}
-            <li><input type="checkbox" name="f{$symptome.code}" id="f{$symptome.code}" checked="checked"/><label for="f{$symptome.code}">{$symtome.desc}</label></li>
+            <li><p>{$symptome.desc}</p></li>
         {/foreach}
     </ul>
 </div>
