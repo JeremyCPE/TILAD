@@ -82,7 +82,7 @@ require_once('lib/bd/bd.class.php');
         {
             try
             {
-            $bdd = new PDO('mysql:host=localhost;dbname=tp;charset=utf8', 'root', '',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            $bdd = new PDO('mysql:host=localhost;dbname=tp;charset=utf8', 'tp', 'tp',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
             //echo '<p> Connexion avec la BDD reussi </p>';
             }
             catch(Exception $e)

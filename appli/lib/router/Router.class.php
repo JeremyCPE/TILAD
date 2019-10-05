@@ -53,7 +53,8 @@ class Router
 		}
 		if($this-> action="symptome")
 		{
-			$this->getSymptome();
+			$symptome=array("test","tes2");
+			$this->getSymptome($symptome);
 		}
 		if($this-> action="keywords")
 		{
@@ -93,9 +94,9 @@ class Router
 		$this->smarty->assign("arrayMeridien",meridienController::getAllMeridiens());
 	}
 
-	function getSymptome()
+	function getSymptome($symp)
 	{
-		$this->smarty->assign("arraySymptome",symptomeController::getSymptome());
+		$this->smarty->assign("arraySymptome",symptomeController::getSymptome($symp));
 	}
 
 	function searchKeywords()
