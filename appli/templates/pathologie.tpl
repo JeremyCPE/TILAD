@@ -1,13 +1,9 @@
 <fieldset id="fs_patho" class="inputPatho">
     <legend>Pathologies</legend>
-    <input list=patho-list id="patho-choice"/>
     <div class="inputPatho">
-    <datalist id=patho-list>
         {foreach from=$arrayPatho item=patho}
-           <option value="{$patho.desc}"/>
+           <input type="checkbox" name="fp_{$patho.type}" id=fp_{$patho.type}"/><label for=fp_{$patho.type}">{$patho.nom}</label>
         {/foreach}
-    </datalist>
-        
     </div>
 </fieldset>
 
