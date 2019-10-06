@@ -1,20 +1,37 @@
 <?php
 require_once('lib/bd/bd.class.php');
-
-    // récupèrer toute les pathologies
+    
     class pathoController
     {
-        public static function getAllPatho()
+        // récupèrer les types de pathologies
+        public static function getAllTypePatho()
         {
             $maBD = new BD();
-            $resultat = $maBD->requete("SELECT `desc` FROM patho");
+            $resultat = $maBD->requete("SELECT `type`,`nom` FROM `typePatho`");
+            return $resultat;
+        }
+
+        // récupérer la liste des pathologies en fonction des types sélectionner
+        public static function getPathoEnFonctionType($arrayType)
+        {
+            $constructionString="SELECT `desc` FROM `patho`"; //cas ou arrayType vaut 0
+            for($i=0;$i<count($arrayType);$i++)
+            {
+                if($i==0){//cas pour le premier aergument
+                    $constructionString = $constructionString.' where type LIKE "%'.$arrayType[$i].'%"';
+                }else{ //cas pour les autres arguments
+                    $constructionString = $constructionString.' OR type LIKE "%'.$arrayType[$i].'%"';
+                }
+            }
+            $maBD = new BD();
+            $resultat = $maBD->requete($constructionString);
             return $resultat;
         }
     }
 
-    // recupèrer tout les méridiens
     class meridienController
     {
+        // recupèrer tout les méridiens
         public static function getAllMeridiens()
         {
             $maBD = new BD();
@@ -23,10 +40,9 @@ require_once('lib/bd/bd.class.php');
         }
     }
 
-    //recupèrer les symptones en fonction des patho
-
     class symptomeController
     {
+        //recupèrer les symptones en fonction des patho
         public static function getSymptome($pathologie)
         {
             $maBD = new BD();
@@ -53,27 +69,28 @@ require_once('lib/bd/bd.class.php');
     }
 
     class logController
-  {
-      public static function getLogin()
-      {
-          $maBD = new BD();
-          $resultat = $maBD->requete("SELECT `prenom`, `nom`, `password`, `pseudo`  FROM utilisateur");
-          return $resultat;
-      }
-
-      public static function register($pseudo,$password)
-      //TODO : RECUPERER $PSEUDO et $PASSWORD DEPUIS LE FORMULAIRE
-      {
-        try
+    {
+        public static function getLogin()
         {
-          $bdd = new PDO('mysql:host=localhost;dbname=tp;charset=utf8', 'root', '',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-          //echo '<p> Connexion avec la BDD reussi </p>';
-        }
-        catch(Exception $e)
-        {
-                die('Erreur : '.$e->getMessage());
+            $maBD = new BD();
+            $resultat = $maBD->requete("SELECT `prenom`, `nom`, `password`, `pseudo`  FROM utilisateur");
+            return $resultat;
         }
 
+        public static function register($pseudo,$password)
+        //TODO : RECUPERER $PSEUDO et $PASSWORD DEPUIS LE FORMULAIRE
+        {
+            try
+            {
+            $bdd = new PDO('mysql:host=localhost;dbname=tp;charset=utf8', 'tp', 'tp',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            //echo '<p> Connexion avec la BDD reussi </p>';
+            }
+            catch(Exception $e)
+            {
+                    die('Erreur : '.$e->getMessage());
+            }
+
+<<<<<<< HEAD
         if(!empty($pseudo) && !empty($password)) {
           $sql = "INSERT INTO utilisateur (`pseudo`,`password`) VALUES (:pseudo,:password)";
           $stmt = $bdd->prepare($sql);
@@ -86,9 +103,30 @@ require_once('lib/bd/bd.class.php');
           else {
             $message = 'Erreur sur lutilisateur';
           }
+=======
+            if(!empty($pseudo) && !empty($password)){
+            $sql = "INSERT INTO utilisateur (`pseudo`,`password`) VALUES (:pseudo,:password)";
+            $stmt = $bdd->prepare($sql);
+            $stmt->bindParam(':pseudo', $pseudo,PDO::PARAM_STR, 255);
+            $secure_password = password_hash($password, PASSWORD_BCRYPT);
+            $stmt->bindParam(':password', $secure_password,PDO::PARAM_STR, 255);
+            if( $stmt->execute() ):
+                $message = 'Nouvel utilisateur créee';
+            else:
+                $message = 'Erreur sur lutilisateur';
+            endif;
 
+            return $message;
+>>>>>>> 44eff72017a5350bd4f31873b1bd8ef0eee95485
+
+            }
         }
+<<<<<<< HEAD
         return $message;
       }
   }
+=======
+    }
+      
+>>>>>>> 44eff72017a5350bd4f31873b1bd8ef0eee95485
 ?>
