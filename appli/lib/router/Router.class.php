@@ -53,7 +53,7 @@ class Router
 		}
 		if($this-> action="symptome")
 		{
-			$symptome=array("test","tes2");
+			$symptome="test";
 			$this->getSymptome($symptome);
 		}
 		if($this-> action="keywords")

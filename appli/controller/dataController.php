@@ -1,6 +1,6 @@
 <?php
 require_once('lib/bd/bd.class.php');
-    
+
     class pathoController
     {
         // récupèrer les types de pathologies
@@ -8,6 +8,7 @@ require_once('lib/bd/bd.class.php');
         {
             $maBD = new BD();
             $resultat = $maBD->requete("SELECT `type`,`nom` FROM `typePatho`");
+            //Avoir la table SQL typePatho
             return $resultat;
         }
 
@@ -45,12 +46,13 @@ require_once('lib/bd/bd.class.php');
         //recupèrer les symptones en fonction des patho
         public static function getSymptome($pathologie)
         {
+
             $maBD = new BD();
-            $resultat = $maBD->requete("
-                    SELECT symptome.desc FROM symptPatho
-                    inner join symptome on symptPatho.idS = symptome.idS
-                    inner join patho on symptPatho.idP = patho.idP
-                    WHERE patho.desc = ".$pathologie);
+            $resultat = $maBD->requete('SELECT symptome.desc FROM symptPatho
+            inner join symptome on symptPatho.idS = symptome.idS
+            inner join patho on symptPatho.idP = patho.idP
+            WHERE patho.desc = "'.$pathologie.'"');
+            //$pathologie doit etre un string ici (et non un array, faire un fetch sinon)
             return $resultat;
         }
 
@@ -90,20 +92,6 @@ require_once('lib/bd/bd.class.php');
                     die('Erreur : '.$e->getMessage());
             }
 
-<<<<<<< HEAD
-        if(!empty($pseudo) && !empty($password)) {
-          $sql = "INSERT INTO utilisateur (`pseudo`,`password`) VALUES (:pseudo,:password)";
-          $stmt = $bdd->prepare($sql);
-          $stmt->bindParam(':pseudo', $pseudo,PDO::PARAM_STR, 255);
-          $secure_password = password_hash($password, PASSWORD_BCRYPT);
-          $stmt->bindParam(':password', $secure_password,PDO::PARAM_STR, 255);
-          if( $stmt->execute()) {
-            $message = 'Nouvel utilisateur créee';
-          }
-          else {
-            $message = 'Erreur sur lutilisateur';
-          }
-=======
             if(!empty($pseudo) && !empty($password)){
             $sql = "INSERT INTO utilisateur (`pseudo`,`password`) VALUES (:pseudo,:password)";
             $stmt = $bdd->prepare($sql);
@@ -117,16 +105,7 @@ require_once('lib/bd/bd.class.php');
             endif;
 
             return $message;
->>>>>>> 44eff72017a5350bd4f31873b1bd8ef0eee95485
-
             }
-        }
-<<<<<<< HEAD
-        return $message;
-      }
-  }
-=======
+          }
     }
-      
->>>>>>> 44eff72017a5350bd4f31873b1bd8ef0eee95485
 ?>
