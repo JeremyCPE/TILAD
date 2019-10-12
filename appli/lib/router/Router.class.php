@@ -57,9 +57,6 @@ class Router
 			$this->getSymptome($symptome);
 		}
 		if($this-> action="keywords")
-		{	
-			$keywords="abdomen";
-			$this->searchKeywords($keywords);
 		{
 			$this->searchKeywords();
 		}
