@@ -102,10 +102,8 @@ class Router
 		$this->smarty->assign("arraySymptome",symptomeController::getSymptome($symp));
 	}
 
-	function searchKeywords($keywords)
 	function searchKeywords()
 	{
-		$this->smarty->assign("arrayKeywords",symptomeController::searchKeywords($keywords ));
 		$this->smarty->assign("arrayKeywords",symptomeController::searchKeywords());
 	}
 	function getLogin()
@@ -115,6 +113,9 @@ class Router
 
 	function register()
 	{
+		$whole_page = $this->smarty->fetch('templates/inscription.tpl');
+		$pseudo =	$this->smarty->getTemplateVars('pseudo');
+		$password =	$this->smarty->getTemplateVars('password');
 		$this->smarty->assign("stateRegister",logController::register($pseudo,$password));
 	}
 }
