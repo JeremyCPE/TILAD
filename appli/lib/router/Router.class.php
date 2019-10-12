@@ -60,6 +60,8 @@ class Router
 		{	
 			$keywords="abdomen";
 			$this->searchKeywords($keywords);
+		{
+			$this->searchKeywords();
 		}
 		if($this-> action="login")
 		{
@@ -101,8 +103,10 @@ class Router
 	}
 
 	function searchKeywords($keywords)
+	function searchKeywords()
 	{
 		$this->smarty->assign("arrayKeywords",symptomeController::searchKeywords($keywords ));
+		$this->smarty->assign("arrayKeywords",symptomeController::searchKeywords());
 	}
 	function getLogin()
 	{
@@ -111,8 +115,6 @@ class Router
 
 	function register()
 	{
-		$pseudo = "jeremy"; //TEMPORAIRE
-		$password = "1232456"; //TEMPORAIRE
 		$this->smarty->assign("stateRegister",logController::register($pseudo,$password));
 	}
 }

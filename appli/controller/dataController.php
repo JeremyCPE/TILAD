@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('lib/bd/bd.class.php');
 
     class pathoController
@@ -56,7 +57,7 @@ require_once('lib/bd/bd.class.php');
             return $resultat;
         }
 
-        public static function searchKeywords($keywords)
+        public static function searchKeywords()
         {
             $maBD = new BD();
             $resultat = $maBD->requete("
@@ -65,7 +66,7 @@ require_once('lib/bd/bd.class.php');
                     inner join symptome on symptome.idS = keySympt.idS
                     inner join symptPatho on symptPatho.idS = symptome.ids
                     inner join patho on patho.idP = symptPatho.idP
-                    WHERE keywords.name='{$keywords}' ");
+                    WHERE keywords.name='abdomen' ");
             return $resultat;
         }
     }

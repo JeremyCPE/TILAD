@@ -20,29 +20,37 @@
 				</ul>
 			</div>
 		</aside>
-		
+
 		<div id="recap">
-			<p>Bienvenue {$userFirstName}!</p>
+			{assign var={$smarty.cookies.pseudo}  value="tesr" scope=global}
+			{if isset($smarty.cookies.pseudo)}
+			<p>Bienvenue {$smarty.cookies.pseudo} !</p>
 			<form action="index.php?action=logout" method="post">
 				<input type="submit" name="logout" value="Déconnexion"/>
 			</form>
+			{else}
+			<p>Veuillez vous connecter ou vous inscrire pour acceder à toutes les fonctionnaliée</p>
+			<form action="index.php?action=register" method="post">
+				<input type="submit" name="register" value="Connexion"/>
+			</form>
+			{/if}
 		</div>
-		
+
 		<h1>Pathologies en acupuncture</h1>
 		<form action="" method="post">
 			<fieldset id="fs_mer">
 				<legend>Méridiens et Merveilleux Vaisseaux</legend>
-				
+
 				{include file='meridien.tpl'}
-				
+
 				<input type="button" value="Tout cocher" onclick="this.value=check('fs_mer')">
 				</fieldset>
-				
+
 				{include file='pathologie.tpl'}
-				
+
 				<fieldset>
 					<legend>Que souhaitez-vous?</legend>
-					
+
 					<div class="actionPatho">
 						<p>Mode consultation</p>
 						<ul>
@@ -52,21 +60,24 @@
 					</div>
 					<div class="actionPatho">
 						<p class="dev">Mode recherche</p>
-						<form name=recherche method=POST>
-						<input type="text" name="Entrez le mot-clé"/>
-						<input type="submit" value="Rechercher"/>
-						</form>
+						<p class="dev">En cours de développement</p>
 					</div>
 				</fieldset>
 
 				{include file='symptome.tpl'}
-				
+
 				<h3>Poumon</h3><h4>méridien du poumon externe</h4><ul><li>Battement des ailes du nez</li><li>Dessèchement des phanères</li><li>Douleur lancinante au creux sus-claviculaire</li><li>Pouls superficiel</li><li>Symptômes thoraco-pulmonaires (toux continuelle, dyspnée, gonflement thoracique)</li><li>Transpiration avec pollakiurie et diminution de l'appétit</li><li>Vue floue dans les cas graves</li></ul><h4>zang poumon plein</h4><ul><li>Épaule et dos douloureux</li><li>Nausée</li><li>Plénitude douloureuse de la poitrine (emphysème) et des côtes entraînant dyspnée et toux avec mucosités purulentes</li></ul><h4>zang poumon vide</h4><ul><li>Alopécie</li><li>Asthénie et amaigrissement</li><li>Fièvre et transpiration brutale et intermittente</li><li>Gorge et peau sèches</li><li>Respiration faible</li><li>Toux avec envie d'uriner</li><li>Visage pâle et joues rouges</li><li>Voix faible</li></ul><h4>zang poumon chaud</h4><ul><li>Constipation, selles dures</li><li>Douleur thoracique aiguë comme un coup de poignard</li><li>Dysurie et hématurie</li><li>Épistaxis</li><li>Gorge irritée</li><li>Soif</li><li>Toux avec hémoptysie</li><li>Visage fiévreux</li></ul><h4>zang poumon froid</h4><ul><li>Absence de soif</li><li>Douleur thoracique sourde, dyspnée et toux</li></ul>
 			</form>
 			<div id="footer">
 				<p>Licence CC by-nc-sa - Bruno Mascret</p>
 			</div>
 		</div>
-		
+
 	</body>
 </html>
+
+<script>
+
+ $expire = time() + 365*24*3600;
+ setcookie('pseudo', "test", $expire);
+</script>
