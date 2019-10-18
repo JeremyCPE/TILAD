@@ -58,7 +58,8 @@ class Router
 		}
 		if($this-> action="keywords")
 		{
-			$this->searchKeywords();
+			$keywords="abdomen";
+			$this->searchKeywords($keywords);
 		}
 		if($this-> action="login")
 		{
@@ -99,9 +100,9 @@ class Router
 		$this->smarty->assign("arraySymptome",symptomeController::getSymptome($symp));
 	}
 
-	function searchKeywords()
+	function searchKeywords($keywords)
 	{
-		$this->smarty->assign("arrayKeywords",symptomeController::searchKeywords());
+		$this->smarty->assign("arrayKeywords",symptomeController::searchKeywords($keywords));
 	}
 	function getLogin()
 	{
