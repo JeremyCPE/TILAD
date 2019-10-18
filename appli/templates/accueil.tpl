@@ -3,18 +3,21 @@
 <body>
 
 	<div id="content">
-		<div id="recap">
-			{if isset($smarty.cookies.pseudo)}
-			<p>Bienvenue {$smarty.cookies.pseudo} !</p>
-			<form action="index.php?action=logout" method="post">
-				<input type="submit" name="logout" value="Déconnexion"/>
-			</form>
-			{else}
-			<p>Veuillez vous connecter ou vous inscrire pour acceder à toutes les fonctionnaliées</p>
-			<form action="index.php?action=register" method="post">
-				<input type="submit" name="register" value="Connexion"/>
-			</form>
-			{/if}
+		<aside>
+			<div id="menu">
+				<nav>
+					<li><a href="http://localhost/appli/?action=accueil">Accueil</a></li>
+					<li><a href="http://localhost/appli/?action=recherche_patho">Recherche par pathologie</a></li>
+					<li><a href="http://localhost/appli/?action=recherche_symptome">Recherche par symptome</a></li>
+					<li><a href="http://localhost/appli/?action=patho_prcp">Pathologie principales</a></li>
+					{if isset($smarty.cookies.pseudo)}
+					<li style="float:right"><a href="http://localhost/appli/?action=logout">Déconnexion</a></li>
+					{else}
+					<li style="float:right"><a href="http://localhost/appli/?action=register">Connexion/Inscription</a></li>
+					{/if}
+				<nav>
+			</div>
+		</aside>
 	</div>
 
 	<h1>Pathologies en acupuncture</h1>
