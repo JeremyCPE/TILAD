@@ -29,6 +29,7 @@
 
 			{include file='pathologie.tpl'}
 
+			<input type="submit" value="rechercher" onclick="">
 		</form>
 
 {include file='footer.tpl'}
