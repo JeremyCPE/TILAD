@@ -19,7 +19,7 @@ class Router
 		"patho_prcp" => "templates/patho_prcp.tpl",
 		"meridien" => "templates/meridien.tpl",
 		"keywords"	=> "templates/symptome.tpl",
-		"login" => "templates/connexion.tpl",
+		"login" => "templates/inscription.tpl",
 		"logout" => "templates/deconnexion.tpl",
 		"register" => "templates/inscription.tpl"
 	);

@@ -6,15 +6,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Inscription</title>
 </head>
-
 	<header>
 		<h1>Inscription</h1>
 	</header>
-
 	<body>
-	<div id="title"><h1>S'inscrire</h1></div>
-
-	{literal}
 	<div id="title"><h2>S'inscrire</h2></div>
 </form>
 {if isset($smarty.post.pseudo) && isset($smarty.post.password)}
@@ -22,7 +17,7 @@
 <p> Le pseudo {$smarty.post.pseudo} est déjà utilisé </p>
 	{/if}
 	{/if}
-{if $stateRegister == true}
+{if isset($stateRegister) && ($stateRegister == true)}
 <p> Inscription terminée {$smarty.post.pseudo} ! </p>
 <p> Cliquez <a href="http://localhost/appli/?action=accueil"> ici </a> pour revenir à la page d'accueil </p>
 {else}
@@ -43,6 +38,26 @@
 {/literal}
 {/if}
 <div id="title"><h2>Se Connecter</h2></div>
-{include file='connexion.tpl'}
+
+<div class="loginList">
+{literal}
+
+         <form action="index.php?action=login" method="POST">
+   				Pseudo:<br>
+   				<input type="pseudo" name="pseudoLog"  title="Pseudo" placeholder="Pseudo" required><br>
+   				Mot de passe:<br>
+   				<input type="password" name="passwordLog" placeholder="Mot de passe" required><br>
+   				<br>
+          <input type="submit" name="Confirmer">
+{/literal}
+{if isset($smarty.post.pseudoLog) && isset($smarty.post.passwordLog)}
+{if isset($arrayLogin) && $arrayLogin == true}
+  <p> Bonjour {$smarty.post.pseudoLog}, vous allez-bien aujourd'hui ? </p>
+  <p> Cliquez <a href="http://localhost/appli/?action=accueil"> ici </a> pour revenir à la page d'accueil </p>
+{else}
+  <p> Mauvais nom d'utilsateur ou de mot de passe </p>
+{/if}
+{/if}
+</div>
 		</body>
 </html>
