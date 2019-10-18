@@ -15,14 +15,39 @@
 	</header>
 
 	<body>
+<<<<<<< Updated upstream
 	<div id="title"><h1>S'inscrire</h1></div>
 
 	{literal}
+=======
+	<div id="title"><h2>S'inscrire</h2></div>
+</form>
+{if isset($smarty.post.pseudo) && isset($smarty.post.password)}
+	{if $stateRegister == false}
+<p> Le pseudo {$smarty.post.pseudo} est déjà utilisé </p>
+	{/if}
+	{/if}
+{if $stateRegister == true}
+<p> Inscription terminée {$smarty.post.pseudo} ! </p>
+<p> Cliquez <a href="http://localhost/appli/?action=accueil"> ici </a> pour revenir à la page d'accueil </p>
+{else}
+
+{literal}
+>>>>>>> Stashed changes
 			<form action="index.php?action=register" method="POST">
 				Pseudo:<br>
 				<input type="pseudo" name="pseudo"  title="Pseudo" placeholder="Pseudo" required><br>
 				Mot de passe:<br>
 				<input type="password" name="password" pattern=".{6,}" title="Au moins six caractères" placeholder="Mot de passe" required><br>
+<<<<<<< Updated upstream
+=======
+				Nom de Famille<br>
+				<input title="Nom" type="text" name="surname"  placeholder="Nom" required><br>
+				Prenom<br>
+				<input title="Prenom" type="text" name="name"  placeholder="Prenom" required><br>
+				Adresse<br>
+				<input title="Adresse" type="text" name="address" required><br>
+>>>>>>> Stashed changes
 				<input type="submit" name="Confirmer">
 				<label>Se souvenir de moi ?</label><input type="checkbox" name="souvenir" /><br />
 <!--

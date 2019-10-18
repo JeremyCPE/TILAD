@@ -11,9 +11,13 @@
 	<body>
 	<div id="content">
 		<p>Deconnecté</p>
-		<p> Cliquez <a href="http://localhost/appli/?action=test"> ici </a> pour revenir à la page d'accueil </p>
+		<p> Cliquez <a href="http://localhost/appli/?action=accueil"> ici </a> pour revenir à la page d'accueil </p>
 		<script>
+<<<<<<< Updated upstream
 		setcookie('pseudo', NULL, -1);
+=======
+
+>>>>>>> Stashed changes
 		</script>
 	</div>
 </body>
