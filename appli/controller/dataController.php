@@ -44,7 +44,7 @@ require_once('lib/bd/bd.class.php');
 
     class symptomeController
     {
-        //recupèrer les symptones en fonction des patho
+        //recupèrer les symptomes en fonction des patho
         public static function getSymptome($pathologie)
         {
 

@@ -1,7 +1,8 @@
 {include file='header.tpl'}
 
 <body>
-
+	<div id="content">
+	</div>
 	<h1>Pathologies en acupuncture</h1>
 		<form action="" method="post">
 			<fieldset id="fs_mer">
