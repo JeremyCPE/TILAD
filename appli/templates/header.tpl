@@ -17,4 +17,20 @@
 				</ul>
 			</div>
 		</aside>
+
+		<div id="content">
+		<div id="recap">
+			{if isset($smarty.cookies.pseudo)}
+			<p>Bienvenue {$smarty.cookies.pseudo} !</p>
+			<form action="index.php?action=logout" method="post">
+				<input type="submit" name="logout" value="Déconnexion"/>
+			</form>
+			{else}
+			<p>Veuillez vous connecter ou vous inscrire pour acceder à toutes les fonctionnaliées</p>
+			<form action="index.php?action=register" method="post">
+				<input type="submit" name="register" value="Connexion"/>
+			</form>
+			{/if}
+	</div>
+	
 	</head>
