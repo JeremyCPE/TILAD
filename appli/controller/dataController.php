@@ -61,7 +61,7 @@ require_once('lib/bd/bd.class.php');
         {
             $maBD = new BD();
             $resultat = $maBD->requete("
-                    SELECT name,patho.desc FROM keywords
+                    SELECT patho.desc FROM keywords
                     inner join keySympt on keySympt.idK = keywords.idK
                     inner join symptome on symptome.idS = keySympt.idS
                     inner join symptPatho on symptPatho.idS = symptome.ids

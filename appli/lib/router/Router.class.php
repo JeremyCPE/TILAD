@@ -19,8 +19,8 @@ class Router
 		"patho_prcp" => "templates/patho_prcp.tpl",
 		"pathologie" => "templates/pathologie.tpl",
 		"meridien" => "templates/meridien.tpl",
-		"symptome" => "templates/symptome.tpl",
-		"keywords"	=> "templates/keywords.tpl",
+		//"symptome" => "templates/symptome.tpl",
+		"keywords"	=> "templates/symptome.tpl",
 		"login" => "templates/connexion.tpl",
 		"logout" => "templates/deconnexion.tpl",
 		"register" => "templates/inscription.tpl"
@@ -39,33 +39,27 @@ class Router
 			$ret = Router::mapTpl[$this->action];
 			$this->todo();
 		}
-		if($this-> action="accueil")
+		if($this-> action=="accueil")
 		{
 			$this->smarty->assign("Test","Tsssst");
-		}
-		if($this-> action="pathologie")
-		{
 			$this->getPatho();
-		}
-		if($this-> action="meridien")
-		{
 			$this->getMeridien();
 		}
-		if($this-> action="symptome")
+		if($this-> action=="symptome")
 		{
 			$symptome="test";
 			$this->getSymptome($symptome);
 		}
-		if($this-> action="keywords")
+		if($this-> action=="keywords")
 		{
 			$keywords="abdomen";
 			$this->searchKeywords($keywords);
 		}
-		if($this-> action="login")
+		if($this-> action=="login")
 		{
 			$this->getLogin();
 		}
-		if($this-> action="register")
+		if($this-> action=="register")
 		{
 			$this->register();
 		}
@@ -102,7 +96,8 @@ class Router
 
 	function searchKeywords($keywords)
 	{
-		$this->smarty->assign("arrayKeywords",symptomeController::searchKeywords($keywords));
+		$symp = symptomeController::searchKeywords($keywords);
+		$this->getSymptome($symp);
 	}
 	function getLogin()
 	{
