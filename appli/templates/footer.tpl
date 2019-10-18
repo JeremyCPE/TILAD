@@ -1,3 +1,3 @@
 <div id="footer">
-				<p>Julien - Typhani - Jeremy - Lucas</p>
+				<p>Julien - Tiffany - Jeremy - Lucas</p>
 </div>

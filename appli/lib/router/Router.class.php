@@ -15,7 +15,7 @@ class Router
 	const mapTpl = array(
 		"accueil" => "templates/accueil.tpl",
 		"recherche_patho" =>"templates/recherche_patho.tpl",
-		"recherche_symptome" => "templates/recherche_symptome",
+		"recherche_symptome" => "templates/recherche_symptome.tpl",
 		"patho_prcp" => "templates/patho_prcp.tpl",
 		"meridien" => "templates/meridien.tpl",
 		"keywords"	=> "templates/symptome.tpl",
@@ -38,6 +38,11 @@ class Router
 			$this->todo();
 		}
 		if($this-> action=="recherche_patho")
+		{
+			$this->getPatho();
+			$this->getMeridien();
+		}
+		if($this-> action=="recherche_symptome")
 		{
 			$this->getPatho();
 			$this->getMeridien();
