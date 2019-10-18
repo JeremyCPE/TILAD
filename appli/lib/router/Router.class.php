@@ -17,9 +17,7 @@ class Router
 		"recherche_patho" =>"template/recherche_patho.tpl",
 		"recherche_symptome" => "template/recherche_symptome",
 		"patho_prcp" => "templates/patho_prcp.tpl",
-		"pathologie" => "templates/pathologie.tpl",
 		"meridien" => "templates/meridien.tpl",
-		//"symptome" => "templates/symptome.tpl",
 		"keywords"	=> "templates/symptome.tpl",
 		"login" => "templates/connexion.tpl",
 		"logout" => "templates/deconnexion.tpl",
@@ -45,11 +43,6 @@ class Router
 			$this->getPatho();
 			$this->getMeridien();
 		}
-		if($this-> action=="symptome")
-		{
-			$symptome="test";
-			$this->getSymptome($symptome);
-		}
 		if($this-> action=="keywords")
 		{
 			$keywords="abdomen";
@@ -62,6 +55,10 @@ class Router
 		if($this-> action=="register")
 		{
 			$this->register();
+		}
+		if($this-> action=="logout")
+		{
+			$this->logout();
 		}
 		return $ret;
 	}
@@ -107,9 +104,21 @@ class Router
 	function register()
 	{
 		$whole_page = $this->smarty->fetch('templates/inscription.tpl');
-		$pseudo =	$this->smarty->getTemplateVars('pseudo');
-		$password =	$this->smarty->getTemplateVars('password');
+		$pseudo ="";
+		$password ="";
+		if(isset ($_POST['pseudo']))	$pseudo =	$_POST['pseudo'];
+		if(isset ($_POST['password']))	$password =	$_POST['password'];
+		$expire = time() + 365*24*3600;
+		//var_dump($pseudo);
+		//var_dump(debug_backtrace());
+		//exit;
+		setcookie('pseudo', $pseudo, $expire);
 		$this->smarty->assign("stateRegister",logController::register($pseudo,$password));
+	}
+
+	function logout()
+	{
+	 setcookie('pseudo', NULL, -1);
 	}
 }
 
