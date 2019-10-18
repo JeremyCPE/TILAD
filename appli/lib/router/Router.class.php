@@ -45,8 +45,7 @@ class Router
 		}
 		if($this-> action=="keywords")
 		{
-			$keywords="abdomen";
-			$this->searchKeywords($keywords);
+			$this->searchKeywords();
 		}
 		if($this-> action=="login")
 		{
@@ -91,8 +90,11 @@ class Router
 		$this->smarty->assign("arraySymptome",symptomeController::getSymptome($symp));
 	}
 
-	function searchKeywords($keywords)
+	function searchKeywords()
 	{
+		$keywords="";
+		if(isset ($_POST['keyword']))	$keywords =	$_POST['keyword'];
+		$this->smarty->assign("symptome",$keywords);
 		$symp = symptomeController::searchKeywords($keywords);
 		$this->getSymptome($symp);
 	}
@@ -103,7 +105,7 @@ class Router
 
 	function register()
 	{
-		$whole_page = $this->smarty->fetch('templates/inscription.tpl');
+		//$whole_page = $this->smarty->fetch('templates/inscription.tpl');
 		$pseudo ="";
 		$password ="";
 		if(isset ($_POST['pseudo']))	$pseudo =	$_POST['pseudo'];
