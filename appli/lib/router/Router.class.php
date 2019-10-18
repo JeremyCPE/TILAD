@@ -39,35 +39,38 @@ class Router
 			$ret = Router::mapTpl[$this->action];
 			$this->todo();
 		}
-		if($this-> action="accueil")
+		if($this-> action=="accueil")
 		{
 			$this->smarty->assign("Test","Tsssst");
 		}
-		if($this-> action="pathologie")
+		if($this-> action=="pathologie")
 		{
 			$this->getPatho();
 		}
-		if($this-> action="meridien")
+		if($this-> action=="meridien")
 		{
 			$this->getMeridien();
 		}
-		if($this-> action="symptome")
+		if($this-> action=="symptome")
 		{
 			$symptome="test";
 			$this->getSymptome($symptome);
 		}
-		if($this-> action="keywords")
+		if($this-> action=="keywords")
 		{
-			$keywords="abdomen";
-			$this->searchKeywords($keywords);
+			$this->searchKeywords();
 		}
-		if($this-> action="login")
+		if($this-> action=="login")
 		{
 			$this->getLogin();
 		}
-		if($this-> action="register")
+		if($this-> action=="register")
 		{
 			$this->register();
+		}
+		if($this-> action=="logout")
+		{
+			$this->logout();
 		}
 		return $ret;
 	}
@@ -100,9 +103,9 @@ class Router
 		$this->smarty->assign("arraySymptome",symptomeController::getSymptome($symp));
 	}
 
-	function searchKeywords($keywords)
+	function searchKeywords()
 	{
-		$this->smarty->assign("arrayKeywords",symptomeController::searchKeywords($keywords));
+		$this->smarty->assign("arrayKeywords",symptomeController::searchKeywords());
 	}
 	function getLogin()
 	{
@@ -112,9 +115,21 @@ class Router
 	function register()
 	{
 		$whole_page = $this->smarty->fetch('templates/inscription.tpl');
-		$pseudo =	$this->smarty->getTemplateVars('pseudo');
-		$password =	$this->smarty->getTemplateVars('password');
+		$pseudo ="";
+		$password ="";
+		if(isset ($_POST['pseudo']))	$pseudo =	$_POST['pseudo'];
+		if(isset ($_POST['password']))	$password =	$_POST['password'];
+		$expire = time() + 365*24*3600;
+		//var_dump($pseudo);
+		//var_dump(debug_backtrace());
+		//exit;
+		setcookie('pseudo', $pseudo, $expire);
 		$this->smarty->assign("stateRegister",logController::register($pseudo,$password));
+	}
+
+	function logout()
+	{
+	 setcookie('pseudo', NULL, -1);
 	}
 }
 

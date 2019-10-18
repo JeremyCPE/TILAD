@@ -22,14 +22,13 @@
 		</aside>
 
 		<div id="recap">
-			{assign var={$smarty.cookies.pseudo}  value="tesr" scope=global}
 			{if isset($smarty.cookies.pseudo)}
 			<p>Bienvenue {$smarty.cookies.pseudo} !</p>
 			<form action="index.php?action=logout" method="post">
 				<input type="submit" name="logout" value="Déconnexion"/>
 			</form>
 			{else}
-			<p>Veuillez vous connecter ou vous inscrire pour acceder à toutes les fonctionnaliée</p>
+			<p>Veuillez vous connecter ou vous inscrire pour acceder à toutes les fonctionnaliées</p>
 			<form action="index.php?action=register" method="post">
 				<input type="submit" name="register" value="Connexion"/>
 			</form>
@@ -60,11 +59,7 @@
 					</div>
 					<div class="actionPatho">
 						<p class="dev">Mode recherche</p>
-						<form name=recherche method=POST>
-						<input type="text" name="Entrez le mot clé"/>
-						<input type="submit" value="Rechercher"/>
-						</form>
-					
+						<p class="dev">En cours de développement</p>
 					</div>
 				</fieldset>
 
@@ -79,9 +74,3 @@
 
 	</body>
 </html>
-
-<script>
-
- $expire = time() + 365*24*3600;
- setcookie('pseudo', "test", $expire);
-</script>

@@ -57,7 +57,7 @@ require_once('lib/bd/bd.class.php');
             return $resultat;
         }
 
-        public static function searchKeywords($keywords)
+        public static function searchKeywords()
         {
             $maBD = new BD();
             $resultat = $maBD->requete("
@@ -66,7 +66,7 @@ require_once('lib/bd/bd.class.php');
                     inner join symptome on symptome.idS = keySympt.idS
                     inner join symptPatho on symptPatho.idS = symptome.ids
                     inner join patho on patho.idP = symptPatho.idP
-                    WHERE keywords.name='{$keywords}' ");
+                    WHERE keywords.name='abdomen' ");
             return $resultat;
         }
     }
@@ -81,7 +81,6 @@ require_once('lib/bd/bd.class.php');
         }
 
         public static function register($pseudo,$password)
-        //TODO : RECUPERER $PSEUDO et $PASSWORD DEPUIS LE FORMULAIRE
         {
             try
             {
@@ -99,8 +98,11 @@ require_once('lib/bd/bd.class.php');
             $stmt->bindParam(':pseudo', $pseudo,PDO::PARAM_STR, 255);
             $secure_password = password_hash($password, PASSWORD_BCRYPT);
             $stmt->bindParam(':password', $secure_password,PDO::PARAM_STR, 255);
+            $expire = time() + 365*24*3600;
+            setcookie('pseudo', $pseudo, $expire);
             if( $stmt->execute() ):
                 $message = 'Nouvel utilisateur créee';
+
             else:
                 $message = 'Erreur sur lutilisateur';
             endif;
