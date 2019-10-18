@@ -1,15 +1,24 @@
 <body>
 <div class="loginList">
        <ul>
+{literal}
 
-         <!--
-         <form action="index.php?action=register" method="POST">
+         <form action="index.php?action=login" method="POST">
    				Pseudo:<br>
-   				<input type="pseudo" name="pseudo"  title="Pseudo" placeholder="Pseudo" required><br>
+   				<input type="pseudo" name="pseudoLog"  title="Pseudo" placeholder="Pseudo" required><br>
    				Mot de passe:<br>
-   				<input type="password" name="password" title="Au moins six caractères" placeholder="Mot de passe" required><br>
-   				Nom:<br>
-           -->
+   				<input type="password" name="passwordLog" placeholder="Mot de passe" required><br>
+   				<br>
+          <input type="submit" name="Confirmer">
+{/literal}
+{if isset($smarty.post.pseudoLog) && isset($smarty.post.passwordLog)}
+{if $arrayLogin == true}
+  <p> Bonjour {$smarty.post.pseudoLog}, vous allez-bien aujourd'hui ? </p>
+  <p> Cliquez <a href="http://localhost/appli/?action=accueil"> ici </a> pour revenir à la page d'accueil </p>
     </ul>
+{else}
+  <p> Mauvais nom d'utilsateur ou de mot de passe </p>
+{/if}
+{/if}
 </div>
 </body>

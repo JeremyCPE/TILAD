@@ -109,22 +109,33 @@ class Router
 	}
 	function getLogin()
 	{
-		$this->smarty->assign("arrayLogin",logController::getLogin());
+		$pseudoLog ="";
+		$passwordLog ="";
+		if(isset ($_POST['pseudoLog']))	$pseudoLog =	$_POST['pseudoLog'];
+		if(isset ($_POST['passwordLog']))	$passwordLog =	$_POST['passwordLog'];
+		$this->smarty->assign("arrayLogin",logController::getLogin($pseudoLog,$passwordLog));
 	}
 
 	function register()
 	{
-		//$whole_page = $this->smarty->fetch('templates/inscription.tpl');
 		$pseudo ="";
 		$password ="";
+		$name ="";
+		$surname ="";
+		$mail ="";
+		$birthdate ="";
+		$address ="";
+		$tel ="";
 		if(isset ($_POST['pseudo']))	$pseudo =	$_POST['pseudo'];
 		if(isset ($_POST['password']))	$password =	$_POST['password'];
-		$expire = time() + 365*24*3600;
-		//var_dump($pseudo);
-		//var_dump(debug_backtrace());
-		//exit;
-		setcookie('pseudo', $pseudo, $expire);
-		$this->smarty->assign("stateRegister",logController::register($pseudo,$password));
+		if(isset ($_POST['name']))	$name =	$_POST['name'];
+		if(isset ($_POST['surname']))	$surname =	$_POST['surname'];
+	//	if(isset ($_POST['mail']))	$mail =	$_POST['mail'];
+	//	if(isset ($_POST['birthdate']))	$birthdate =	$_POST['birthdate'];
+		if(isset ($_POST['address']))	$address =	$_POST['address'];
+	//	if(isset ($_POST['tel']))	$tel =	$_POST['tel'];
+
+		$this->smarty->assign("stateRegister",logController::register($pseudo,$password,$address,$surname,$name));
 	}
 
 	function logout()
