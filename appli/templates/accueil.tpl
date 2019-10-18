@@ -27,12 +27,19 @@
 					</ul>
 				</div>
 				<div class="actionPatho">
+					{if isset($smarty.cookies.pseudo)}
 					<p>Mode recherche</p>
 					<form name="recherche" action="index.php?action=keywords" method="POST">
 						<input type="text" name="keyword"/>
 						<input type="submit" value="Rechercher"/>
 					</form>
-				
+					{else}
+				<p>Connectez-vous pour accéder à cette fonctionnalité</p>
+				<form name="recherche" action="index.php?action=keywords" method="POST">
+						<input type="text" name="keyword" value="désactivée" disabled/>
+						<input type="submit" value="Rechercher" disabled/>
+				</form>
+					{/if}
 				</div>
 			</fieldset>
 
