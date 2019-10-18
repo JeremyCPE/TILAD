@@ -1,5 +1,7 @@
 {include file='header.tpl'}
-	<body>
+
+<body>
+
 	<div id="content">
 		<div id="recap">
 			{if isset($smarty.cookies.pseudo)}
@@ -15,7 +17,7 @@
 			{/if}
 	</div>
 
-		<h1>Pathologies en acupuncture</h1>
+	<h1>Pathologies en acupuncture</h1>
 		<form action="" method="post">
 			<fieldset id="fs_mer">
 				<legend>Méridiens et Merveilleux Vaisseaux</legend>
@@ -23,11 +25,11 @@
 				{include file='meridien.tpl'}
 
 				<input type="button" value="Tout cocher" onclick="this.value=check('fs_mer')">
-				</fieldset>
+			</fieldset>
 
-				{include file='pathologie.tpl'}
+			{include file='pathologie.tpl'}
 
-				<fieldset>
+			<fieldset>
 					<legend>Que souhaitez-vous?</legend>
 
 					<div class="actionPatho">
@@ -37,6 +39,7 @@
 							<li><input type="submit" name="a_tout" value="Tout afficher"/></li>
 						</ul>
 					</div>
+
 					<div class="actionPatho">
 						<p>Mode recherche</p>
 						<form name=recherche action="index.php?action=keywords" method=POST>
@@ -44,14 +47,14 @@
 							<input type="submit" value="Rechercher"/>
 						</form>
 					
-					</div>
-				</fieldset>
+					</div>	
+			</fieldset>
 
-				{include file='symptome.tpl'}
+			{include file='symptome.tpl'}
 
-			</form>
-			{include file='footer.tpl'}
-		</div>
+		</form>
 
-	</body>
+{include file='footer.tpl'}
+
+</body>
 </html>
