@@ -81,6 +81,7 @@ class Router
 	function getPatho()
 	{
 		$this->smarty->assign("arrayPatho",pathoController::getAllTypePatho());
+		$this->smarty->assign("arraySympFctPatho","Test");
 	}
 
 	function getTypePatho()

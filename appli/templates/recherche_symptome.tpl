@@ -1,20 +1,26 @@
-{include file='header.tpl'}
+	{include file='header.tpl'}
 
-<body>
-			<fieldset>
-					<legend>Recherche des symptomes par mots-clé</legend>
+	<body>
+		<fieldset>
+				<legend>Recherche des symptomes par mots-clé</legend>
 
-					<div class="actionPatho">
-						<p>Mode recherche</p>
-						<form name=recherche action="index.php?action=keywords" method=POST>
-							<input type="text" name="Entrez le mot clé"/>
-							<input type="submit" value="Rechercher"/>
-						</form>
-					</div>	
-			</fieldset>
+				<div class="actionPatho">
+					<p>Mode recherche</p>
+					<form name=recherche action="index.php?action=keywords" method=POST>
+						<input type="text" name="Entrez le mot clé"/>
+						<input type="submit" value="Rechercher"/>
+					</form>
+				</div>	
+		</fieldset>
 
-			{include file='symptome.tpl'}
+		{if isset($arraySympFctPatho)}
+		<form>
+			{include file='symptome_fctPatho.tpl'}
+		</form>
+		{/if}
 
-</body>
-{include file='footer.tpl'}
+		{include file='symptome.tpl'}
+
+	</body>
+	{include file='footer.tpl'}
 </html>
