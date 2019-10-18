@@ -1,13 +1,8 @@
 {include file='header.tpl'}
 
 <body>
-
-<<<<<<< HEAD
-=======
 	<div id="content">
 	</div>
-
->>>>>>> 778d282d3f4c17200cf83452bb9a3a888b02316e
 	<h1>Pathologies en acupuncture</h1>
 		<form action="" method="post">
 			<fieldset id="fs_mer">
