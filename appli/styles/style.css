@@ -1,22 +1,27 @@
-aside{
-	
-	position:relative;
-	background: rgba(240,250,240,0.6);
-	
-}
+nav {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color:#003f5c;
+  }
 
-aside ul{
-	
-	
-	
-}
+  nav li{
+	display: inline-flex;
+  }
+  
+  nav a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	width: 100%;
+  }
 
-aside ul li{
-	
-	display:inline;
-	margin-left: 5%;
-	
-}
+  nav a:hover {
+	background-color:#5d1451;
+  }
 
 ul.tabRep{
 	margin:0;
@@ -26,8 +31,8 @@ ul.tabRep{
 }
 
 #recap{
-position:fixed;
-float:right;
+/*position:fixed;
+float:right;*/
 top:2%;
 right: 2%;
 margin-left: 1%;
@@ -35,7 +40,7 @@ width: 25%;
 min-width:200px;
 clear:both;
 
-background: rgba(240,250,240,0.6);
+background: rgba(250,250,250,0.6);
 }
 
 #cmd{
@@ -44,13 +49,12 @@ min-width:400px;
 }
 
 body{
-	background: rgba(180,234,190,0.5);
-	background-image: url("zenBG-1.png"), url("zenBG-2.png");
+	background: #2f416d;
 	background-repeat: repeat-x, repeat;
 }
 
 #content{
-background: rgba(240,250,240,0.6);
+background: #494ca2;
 min-width:640px;
 margin-left: 10%;
 margin-right: 10%;
@@ -84,11 +88,11 @@ div.inputMer{
 	float: left;
 	filter : alpha(opacity=50);
 	opacity : 1.6;
-	background: rgba(240,250,240,0.6);
+	background: rgba(250,250,250,0.6);
 }
 
 div.inputPatho{
-	background: rgba(240,250,240,0.6);	
+	background: rgba(250,250,250,0.6);	
 }
 
 div.actionPatho{
@@ -97,7 +101,7 @@ div.actionPatho{
 	padding: 1%;
 	float: left;
 	border: 1px solid gray;
-	background: rgba(240,250,240,0.6);
+	background: rgba(250,250,250,0.6);
 }
 
 form li{
@@ -162,10 +166,6 @@ background-color: #DDD !important;
 	margin-left: 5%;
 }
 
-.dev {
-	filter : alpha(opacity=50);
-	opacity : 0.6;
-}
 
 p.imgCmd{
 	text-align: center;
