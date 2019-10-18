@@ -60,7 +60,11 @@
 					</div>
 					<div class="actionPatho">
 						<p class="dev">Mode recherche</p>
-						<p class="dev">En cours de développement</p>
+						<form name=recherche method=POST>
+						<input type="text" name="Entrez le mot clé"/>
+						<input type="submit" value="Rechercher"/>
+						</form>
+					
 					</div>
 				</fieldset>
 
