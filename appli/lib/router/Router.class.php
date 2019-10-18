@@ -14,8 +14,8 @@ class Router
 	private $action = "";
 	const mapTpl = array(
 		"accueil" => "templates/accueil.tpl",
-		"recherche_patho" =>"template/recherche_patho.tpl",
-		"recherche_symptome" => "template/recherche_symptome",
+		"recherche_patho" =>"templates/recherche_patho.tpl",
+		"recherche_symptome" => "templates/recherche_symptome",
 		"patho_prcp" => "templates/patho_prcp.tpl",
 		"meridien" => "templates/meridien.tpl",
 		"keywords"	=> "templates/symptome.tpl",
@@ -37,9 +37,13 @@ class Router
 			$ret = Router::mapTpl[$this->action];
 			$this->todo();
 		}
+		if($this-> action=="recherche_patho")
+		{
+			$this->getPatho();
+			$this->getMeridien();
+		}
 		if($this-> action=="accueil")
 		{
-			$this->smarty->assign("Test","Tsssst");
 			$this->getPatho();
 			$this->getMeridien();
 		}
