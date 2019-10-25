@@ -9,8 +9,8 @@ require 'lib/checkers/checkers.php';
 
 $smarty = new Smarty();
 //$smarty->force_compile = true;
-$smarty->debugging = true;
-$smarty->caching = false;//mettre à true pour la production; attention aux droits d'écriture sur le serveur pour le répertoire de cache!
+$smarty->debugging = false;
+$smarty->caching = true;//mettre à true pour la production; attention aux droits d'écriture sur le serveur pour le répertoire de cache!
 $smarty->cache_lifetime = 0;//120
 
 $action = "";

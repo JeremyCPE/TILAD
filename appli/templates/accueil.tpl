@@ -1,6 +1,7 @@
 {include file='header.tpl'}
 
 <body>
+{include file='nav.tpl'}
 	<div id="content">
 	</div>
 	<h1>Pathologies en acupuncture</h1>
@@ -46,7 +47,7 @@
 			{include file='symptome.tpl'}
 
 		</form>
-
-</body>
 {include file='footer.tpl'}
+</body>
+
 </html>
