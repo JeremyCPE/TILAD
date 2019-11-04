@@ -1,4 +1,4 @@
-{include file='nav.tpl'}
+{include file='header.tpl'}
 <body>
 <fieldset>
 {include file='nav.tpl'}
