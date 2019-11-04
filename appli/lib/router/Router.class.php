@@ -16,7 +16,7 @@ class Router
 		"accueil" => "templates/accueil.tpl",
 		"recherche_patho" =>"templates/recherche_patho.tpl",
 		"recherche_symptome" => "templates/recherche_symptome.tpl",
-		"patho_prcp" => "templates/patho_prcp.tpl",
+		"pathologie_prcp" => "templates/pathologie_prcp.tpl",
 		"meridien" => "templates/meridien.tpl",
 		"keywords"	=> "templates/symptome.tpl",
 		"login" => "templates/inscription.tpl",
@@ -33,6 +33,7 @@ class Router
 
 	function getTpl(){
 		$ret = "templates/defaut.tpl";
+
 		if($this->action!=""){
 			$ret = Router::mapTpl[$this->action];
 			$this->todo();
@@ -76,13 +77,13 @@ class Router
 		return $ret;
 	}
 
-	function todo(){
+	function todo()
+	{
 
 		$this->smarty->assign("userFirstName",get_current_user());
 		$this->smarty->assign("patho","test pathologies");
 
 	}
-
 	function affichePatho()
 	{
 		$this->smarty->assign("arrayPatho",pathoController::getAllTypePatho());
