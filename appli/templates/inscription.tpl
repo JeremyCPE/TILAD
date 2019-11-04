@@ -2,7 +2,9 @@
 
 <body>
 {include file='nav.tpl'}
-	<div class="title1">S'inscrire</div>
+	<h1>
+	S'inscrire
+	</h1>
 <div class="Login">
 {if isset($smarty.post.pseudo) && isset($smarty.post.password)}
 	{if $stateRegister == false}
@@ -30,16 +32,16 @@
 			</div>
 {/literal}
 {/if}
-<div class="title2">Se Connecter</div>
+<h2>Se Connecter</h2>
 
 <div class="loginList">
 {literal}
 
          <form action="index.php?action=login" method="POST">
    				Pseudo:<br>
-   				<input type="pseudo" name="pseudoLog"  title="Pseudo" placeholder="Pseudo" required><br>
+   				<input type="text" name="pseudoLog"  title="Pseudo" placeholder="Pseudo" required><br>
    				Mot de passe:<br>
-   				<input type="password" name="passwordLog" placeholder="Mot de passe" required><br>
+   				<input type="password" name="passwordLog" title="Mot de passe" placeholder="Mot de passe" required><br>
    				<br>
           <input type="submit" name="Confirmer">
 		  </form>
