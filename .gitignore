@@ -1,1 +1,6 @@
 appli/templates_c/
+appli/cache/3d106951f6395a020df5776a7b5d948ffc8210dc.symptome.tpl.php
+appli/cache/8eb7fa093f8234e37e2cdafecff86d2c8c09f36f.defaut.tpl.php
+appli/cache/44ae043fe93579130ddd8fb5221b92aa64cec3a6.recherche_patho.tpl.php
+appli/cache/317d77529d5a9e4f7ea67d028c728b30b97850a8.recherche_symptome.tpl.php
+appli/cache/495024b06073a9093f43f40b3c2f6463499198c0.accueil.tpl.php

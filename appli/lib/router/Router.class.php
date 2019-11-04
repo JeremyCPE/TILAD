@@ -39,17 +39,18 @@ class Router
 		}
 		if($this-> action=="recherche_patho")
 		{
-			$this->getPatho();
+			//affiche les possibilités
+			$this->affichePatho();
 			$this->getMeridien();
 		}
 		if($this-> action=="recherche_symptome")
 		{
-			$this->getPatho();
+			$this->affichePatho();
 			$this->getMeridien();
 		}
 		if($this-> action=="accueil")
 		{
-			$this->getPatho();
+			$this->affichePatho();
 			$this->getMeridien();
 		}
 		if($this-> action=="keywords")
@@ -68,6 +69,10 @@ class Router
 		{
 			$this->logout();
 		}
+		if($this-> action=="test")
+		{
+			
+		}
 		return $ret;
 	}
 
@@ -78,16 +83,17 @@ class Router
 
 	}
 
-	function getPatho()
+	function affichePatho()
 	{
 		$this->smarty->assign("arrayPatho",pathoController::getAllTypePatho());
-		$this->smarty->assign("arraySympFctPatho","Test");
+		//$this->smarty->assign("arraySympFctPatho","Test");
 	}
 
-	function getTypePatho()
+	function getTypePatho($lstPatho)
 	{
-		$type = array("me","mi");
-		$this->smarty->assign("arrayPatho",pathoController::getPathoEnFonctionType($type));
+		echo "rentre dans typePatho";
+		//$lstPatho = array("me","mi");
+		$this->smarty->assign("arrayTypePatho",pathoController::getPathoEnFonctionType($lstPatho));
 	}
 
 	function getMeridien()
