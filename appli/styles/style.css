@@ -22,6 +22,14 @@ nav {
 	background-color:#9fa8a3;
   }
 
+  section{
+	width: 70%;
+	float: none;
+	filter : alpha(opacity=50);
+	opacity : 1.6;
+	background: rgba(250,250,250,0.6)
+  }
+
   #footer{
 	  margin-left: auto;
 	  margin-right: auto;
