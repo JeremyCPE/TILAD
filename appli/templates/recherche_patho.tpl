@@ -1,7 +1,7 @@
 {include file='header.tpl'}
 
 <body>
-
+{include file='nav.tpl'}
 	<h1>Pathologies en acupuncture</h1>
 
 		<form action="" method="post">
