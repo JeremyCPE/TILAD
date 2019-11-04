@@ -6,5 +6,4 @@
 		<title>{$title|default: 'Association des Accupuncteurs soucieux de l\'accessibilité'}</title>
 		<meta name="description" content="whatever"/>
 		<link href="styles/style.css" rel="stylesheet" type="text/css"/>
-		<script type="text/javascript" src="js/pathos.js" charset="utf-8"></script>
 </head>

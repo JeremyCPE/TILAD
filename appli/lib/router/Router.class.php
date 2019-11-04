@@ -16,6 +16,7 @@ class Router
 		"accueil" => "templates/accueil.tpl",
 		"recherche_patho" =>"templates/recherche_patho.tpl",
 		"recherche_symptome" => "templates/recherche_symptome.tpl",
+		"recherche_symptome_bdd" => "templates/recherche_symptome.tpl",
 		"pathologie_prcp" => "templates/pathologie_prcp.tpl",
 		"meridien" => "templates/meridien.tpl",
 		"keywords"	=> "templates/symptome.tpl",
@@ -72,7 +73,12 @@ class Router
 		}
 		if($this-> action=="test")
 		{
-			
+			$this->searchKeywords();
+		}
+		if($this->action == "recherche_symptome_bdd")
+		{
+			$key=$_POST['keywords'];			
+			$this->smarty->assign("arraySymptome",symptomeController::searchKeywords($key));
 		}
 		return $ret;
 	}
@@ -107,12 +113,11 @@ class Router
 		$this->smarty->assign("arraySymptome",symptomeController::getSymptome($symp));
 	}
 
-	function searchKeywords()
+	function searchKeywords($key)
 	{
-		$keywords="";
-		if(isset ($_POST['keyword']))	$keywords =	$_POST['keyword'];
-		$this->smarty->assign("symptome",$keywords);
-		$symp = symptomeController::searchKeywords($keywords);
+		//if(isset ($_POST['keyword']))	$keywords =	$_POST['keyword'];
+		$this->smarty->assign("symptome",$key);
+		$symp = symptomeController::searchKeywords($key);
 		$this->getSymptome($symp);
 	}
 	function getLogin()
@@ -149,6 +154,17 @@ class Router
 	function logout()
 	{
 	 setcookie('pseudo', NULL, -1);
+	}
+
+	function DisplayApi($action)
+	{
+		$result = "";
+		if ($action == "GetAllPatho")
+		{
+			$result = pathoController::GetAllPatho();
+		}
+
+		return json_encode($result);
 	}
 }
 

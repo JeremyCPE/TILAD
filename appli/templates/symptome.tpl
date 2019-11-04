@@ -1,5 +1,4 @@
-<div class="">
-    <p>test</p>
+<div class="">    
     <p>{$symptome}</p>
     <ul>
         {foreach from=$arraySymptome item=symptome}

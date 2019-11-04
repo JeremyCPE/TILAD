@@ -20,6 +20,13 @@ require_once('lib/bd/bd.class.php');
             return $resultat;
         }
 
+        public static Function GetAllPatho()
+        {
+          $maBD = new BD();
+          $AllPatho = $maBD->requete("SELECT   distinct idP as 'id',   `desc` as 'desc',   type as 'type',   `code` as 'CodeMeridien',   nom as MeridienNom,   element as MeridienElement,   yin as MeridienYin FROM `patho` p  join meridien m on m.code=p.mer ");
+          return $AllPatho;
+        }
+
         // récupérer la liste des pathologies en fonction des types sélectionner
         public static function getPathoEnFonctionType($arrayType)
         {
@@ -73,7 +80,8 @@ require_once('lib/bd/bd.class.php');
                     inner join symptome on symptome.idS = keySympt.idS
                     inner join symptPatho on symptPatho.idS = symptome.ids
                     inner join patho on patho.idP = symptPatho.idP
-                    WHERE keywords.name='abdomen' ");
+                    WHERE keywords.name = '".$key."'");
+
             return $resultat;
         }
     }

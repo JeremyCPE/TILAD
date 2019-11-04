@@ -7,8 +7,8 @@
 
 				<div class="actionPatho">
 					<p>Mode recherche</p>
-					<form name=recherche action="index.php?action=keywords" method=POST>
-						<input type="text" name="Entrez le mot clé"/>
+					<form name=recherche action="?action=recherche_symptome_bdd" method=POST>
+						<input type="text" name="keywords" title="Entrez le mot clé"/>
 						<input type="submit" value="Rechercher"/>
 					</form>
 				</div>	

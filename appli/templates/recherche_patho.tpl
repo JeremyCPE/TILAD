@@ -16,9 +16,26 @@
 
 			{include file='pathologie.tpl'}
 
-			<input type="submit" value="Rechercher" onclick="rechercher()">
+			<input type="submit" value="Rechercher" onclick="rechercher(event)">
 		</form>
 
 </body>
+<table>
+  <thead>
+    <tr>
+      <th> Description </th>
+      <th> Type </th>
+      <th> Meridien </th>
+      <th> Element </th>
+      <th> Yin/Yang </th>
+    </tr>
+  </thead>
+
+  <tbody  id = 'searchResult'>
+
+  </tbody>
+
+</table>
+<script type="text/javascript" src="js/pathos.js" charset="utf-8"></script>
 {include file='footer.tpl'}
 </html>
