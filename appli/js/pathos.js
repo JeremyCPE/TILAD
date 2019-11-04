@@ -35,7 +35,7 @@ function rechercherPatho(){
 
 function rechercherMeridien(){
 	var listMeridien=[];
-	var elements = document.getElementsByClassName("inputMer").item(0).elements;
+	var elements = document.getElementsByClassName("meridienCheckbox");
 	for(i=0;i < elements.length;i++){
 		if(elements[i].checked==true)
 		{
@@ -43,4 +43,10 @@ function rechercherMeridien(){
 		}
 	}
 	return listMeridien;
+}
+
+function rechercher()
+{
+	var lstPatho = rechercherPatho();
+	var lstMeridien = rechercherMeridien();
 }

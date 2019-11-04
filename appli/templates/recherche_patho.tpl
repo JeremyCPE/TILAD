@@ -16,7 +16,7 @@
 
 			{include file='pathologie.tpl'}
 
-			<input type="submit" value="Rechercher" onclick="rechercherPatho()">
+			<input type="submit" value="Rechercher" onclick="rechercher()">
 		</form>
 
 </body>

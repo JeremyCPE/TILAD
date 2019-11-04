@@ -64,7 +64,7 @@ require_once('lib/bd/bd.class.php');
             return $resultat;
         }
 
-        public static function searchKeywords()
+        public static function searchKeywords($key)
         {
             $maBD = new BD();
             $resultat = $maBD->requete("
