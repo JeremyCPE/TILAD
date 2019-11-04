@@ -9,7 +9,14 @@ require_once('lib/bd/bd.class.php');
         {
             $maBD = new BD();
             $resultat = $maBD->requete("SELECT `type`,`nom` FROM `typePatho`");
-            //Avoir la table SQL typePatho
+            return $resultat;
+        }
+
+        //retourne le type de la pathologie
+        public static function getTypePatho($nom)
+        {
+            $maBD = new BD();
+            $resultat = $maBD->requete("SELECT `type`,`nom` FROM `typePatho` where `nom`=".$nom);
             return $resultat;
         }
 
@@ -19,7 +26,7 @@ require_once('lib/bd/bd.class.php');
             $constructionString="SELECT `desc` FROM `patho`"; //cas ou arrayType vaut 0
             for($i=0;$i<count($arrayType);$i++)
             {
-                if($i==0){//cas pour le premier aergument
+                if($i==0){//cas pour le premier argument
                     $constructionString = $constructionString.' where type LIKE "%'.$arrayType[$i].'%"';
                 }else{ //cas pour les autres arguments
                     $constructionString = $constructionString.' OR type LIKE "%'.$arrayType[$i].'%"';

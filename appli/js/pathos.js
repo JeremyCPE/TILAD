@@ -19,3 +19,28 @@ function check(id){
 	
 	return ret;
 }
+
+function rechercherPatho(){
+	var listPatho=[];
+	var elements = document.getElementsByClassName("inputPatho").item(0).elements;
+	
+	for(i=0;i < elements.length;i++){
+		if(elements[i].checked==true)
+		{
+			listPatho.push(elements[i].id)
+		}
+	}
+	return listPatho;
+}
+
+function rechercherMeridien(){
+	var listMeridien=[];
+	var elements = document.getElementsByClassName("inputMer").item(0).elements;
+	for(i=0;i < elements.length;i++){
+		if(elements[i].checked==true)
+		{
+			listMeridien.push(elements[i].id)
+		}
+	}
+	return listMeridien;
+}

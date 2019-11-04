@@ -1,6 +1,7 @@
 	{include file='header.tpl'}
 
 	<body>
+	{include file='nav.tpl'}
 		<fieldset>
 				<legend>Recherche des symptomes par mots-clé</legend>
 
