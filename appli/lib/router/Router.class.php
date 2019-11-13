@@ -47,8 +47,11 @@ class Router
 		}
 		if($this-> action=="recherche_symptome")
 		{
-			$this->affichePatho();
-			$this->getMeridien();
+			$key = "";
+			$keyword = "";
+			if(isset ($_POST['keywords'])) $keyword=$_POST['keywords'];
+			$this->smarty->assign("arraySymptome",symptomeController::searchKeywords($keyword));
+			$this->smarty->assign("arrayKeys",symptomeController::searchKey($key));
 		}
 		if($this-> action=="accueil")
 		{
@@ -74,11 +77,6 @@ class Router
 		if($this-> action=="test")
 		{
 			$this->searchKeywords();
-		}
-		if($this->action == "recherche_symptome_bdd")
-		{
-			$key=$_POST['keywords'];			
-			$this->smarty->assign("arraySymptome",symptomeController::searchKeywords($key));
 		}
 		return $ret;
 	}
@@ -143,10 +141,7 @@ class Router
 		if(isset ($_POST['password']))	$password =	$_POST['password'];
 		if(isset ($_POST['name']))	$name =	$_POST['name'];
 		if(isset ($_POST['surname']))	$surname =	$_POST['surname'];
-	//	if(isset ($_POST['mail']))	$mail =	$_POST['mail'];
-	//	if(isset ($_POST['birthdate']))	$birthdate =	$_POST['birthdate'];
 		if(isset ($_POST['address']))	$address =	$_POST['address'];
-	//	if(isset ($_POST['tel']))	$tel =	$_POST['tel'];
 
 		$this->smarty->assign("stateRegister",logController::register($pseudo,$password,$address,$surname,$name));
 	}

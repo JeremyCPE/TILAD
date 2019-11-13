@@ -23,7 +23,8 @@ require_once('lib/bd/bd.class.php');
         public static Function GetAllPatho()
         {
           $maBD = new BD();
-          $AllPatho = $maBD->requete("SELECT   distinct idP as 'id',   `desc` as 'desc',   type as 'type',   `code` as 'CodeMeridien',   nom as MeridienNom,   element as MeridienElement,   yin as MeridienYin FROM `patho` p  join meridien m on m.code=p.mer ");
+          $AllPatho = $maBD->requete("SELECT   distinct idP as 'id',   `desc` as 'desc',   type as 'type',   `code` as 'CodeMeridien',
+            nom as MeridienNom,   element as MeridienElement,   yin as MeridienYin FROM `patho` p  join meridien m on m.code=p.mer ");
           return $AllPatho;
         }
 
@@ -75,13 +76,22 @@ require_once('lib/bd/bd.class.php');
         {
             $maBD = new BD();
             $resultat = $maBD->requete("
-                    SELECT patho.desc FROM keywords
+                    SELECT DISTINCT keywords.name, patho.desc  FROM keywords
                     inner join keySympt on keySympt.idK = keywords.idK
                     inner join symptome on symptome.idS = keySympt.idS
                     inner join symptPatho on symptPatho.idS = symptome.ids
                     inner join patho on patho.idP = symptPatho.idP
-                    WHERE keywords.name = '".$key."'");
+                    WHERE keywords.name LIKE '%".$key."%'");
 
+            return $resultat;
+        }
+
+        public static function searchKey($key)
+        {
+            $maBD = new BD();
+            $resultat = $maBD->requete("
+                    SELECT name FROM keywords
+                    WHERE name LIKE '%".$key."%'");
             return $resultat;
         }
     }

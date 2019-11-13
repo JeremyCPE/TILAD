@@ -2,10 +2,11 @@ let allpatho;
 const searchResult = document.getElementById('searchResult');
 
 
-function displayData(list)
+function displayData()
+
  {
 	// traitement de la data pour l'afficher dans le HTML
-	searchResult.innerHTML=list.map(function(currentElement)
+	searchResult.innerHTML=allpatho.map(function(currentElement)
 		{
 			return `
 			<tr class="openabled">
@@ -21,8 +22,8 @@ function displayData(list)
 }
 
 window.addEventListener("load",async function(){
-	var answer = await fetch("http://localhost/TIDAL/appli/?api=GetAllPatho");
-	allpatho = await answer.json();	
+	var answer = await fetch("http://localhost/appli/?api=GetAllPatho");
+	allpatho = await answer.json();
 }
 )
 var checkflag = false;
@@ -42,14 +43,14 @@ function check(id){
 		checkflag = false;
 		ret = "Tout cocher";
 	}
-	
+
 	return ret;
 }
 
 function rechercherPatho(){
 	var listPatho=[];
 	var elements = document.getElementsByClassName("inputPatho").item(0).elements;
-	
+
 	for(i=0;i < elements.length;i++){
 		if(elements[i].checked==true)
 		{
@@ -77,9 +78,9 @@ function  rechercher(event)
 {
 	event.preventDefault();
 	var lstPatho = rechercherPatho();
-	var lstMeridien = rechercherMeridien();	
-	displayData(allpatho);
-	
+	var lstMeridien = rechercherMeridien();
+	displayData();
+
 }
 
 
@@ -88,5 +89,3 @@ function rechercherKeyword()
 	var keyword = document.getElementsByName("keywords").item(0).value
 
 }
-
-        

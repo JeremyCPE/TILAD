@@ -3,23 +3,22 @@
 	<body>
 	{include file='nav.tpl'}
 		<fieldset>
-				<legend>Recherche des symptomes par mots-clé</legend>
+				<legend>Recherche des symptomes par mots-clés</legend>
 
 				<div class="actionPatho">
 					<p>Mode recherche</p>
-					<form name=recherche action="?action=recherche_symptome_bdd" method=POST>
-						<input type="text" name="keywords" title="Entrez le mot clé"/>
-						<input type="submit" value="Rechercher"/>
-					</form>
-				</div>	
+					<form action= "" method="POST">
+						<datalist id="categoryname">
+							{foreach from=$arrayKeys item=keywords}
+								 <option value="{$keywords.name}"/>
+							{/foreach}
+							</datalist>
+							<input type="text" name="keywords" id="pcategory" autocomplete="off" list="categoryname">
+							 <input type="submit" value="Rechercher">
+							 </form>
+				</div>
 		</fieldset>
-
-		{if isset($arraySympFctPatho)}
-		<form>
-			{include file='symptome_fctPatho.tpl'}
-		</form>
-		{/if}
-
+		
 		{include file='symptome.tpl'}
 
 	</body>
