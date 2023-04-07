@@ -10,8 +10,11 @@
 	</head>
 	<body>
 	<div id="content">
-		<p>Pas de template associé</p>
-		<p>Essayez peut-être <a href="http://localhost/appli/?action=accueil">Accueil du site</a>?</p>
+		<p>Deconnecté</p>
+		<p> Cliquez <a href="http://localhost/appli/?action=accueil"> ici </a> pour revenir à la page d'accueil </p>
+		<script>
+
+		</script>
 	</div>
 </body>
 </html>

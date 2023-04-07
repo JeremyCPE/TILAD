@@ -9,18 +9,32 @@ require 'lib/checkers/checkers.php';
 
 $smarty = new Smarty();
 //$smarty->force_compile = true;
-$smarty->debugging = true;
-$smarty->caching = false;//mettre à true pour la production; attention aux droits d'écriture sur le serveur pour le répertoire de cache!
+$smarty->debugging = false;
+$smarty->caching = true;//mettre à true pour la production; attention aux droits d'écriture sur le serveur pour le répertoire de cache!
 $smarty->cache_lifetime = 0;//120
 
 $action = "";
+$api = false;
 if(isset($_GET["action"]) && check($_GET["action"],"chaineAlpha")==1){
 	$action = $_GET['action'];
 }
 
+if(isset($_GET["api"]) && check($_GET["api"],"chaineAlpha")==1){
+	$action = $_GET['api'];
+	$api = true;
+}
+
 $router = new Router($smarty,$action);
 
-$tpl = $router->getTpl();
+if ($api)
+{
+	$result =	$router->DisplayApi($action);
+	echo $result;
+}
+else
+{
+	$tpl = $router->getTpl();
+	$smarty->display($tpl);
+}
 
-$smarty->display($tpl);
 ?>

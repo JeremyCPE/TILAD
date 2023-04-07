@@ -1,22 +1,42 @@
-aside{
-	
-	position:relative;
-	background: rgba(240,250,240,0.6);
-	
-}
+nav {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background-color:#c5d5cb;
+  }
 
-aside ul{
-	
-	
-	
-}
+  nav li{
+	display: inline-flex;
+  }
+  
+  nav a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	width: 100%;
+  }
 
-aside ul li{
-	
-	display:inline;
-	margin-left: 5%;
-	
-}
+  nav a:hover {
+	background-color:#9fa8a3;
+  }
+
+  section{
+	width: 70%;
+	float: none;
+	filter : alpha(opacity=50);
+	opacity : 1.6;
+	background: rgba(250,250,250,0.6)
+  }
+
+  #footer{
+	  margin-left: auto;
+	  margin-right: auto;
+	  text-align: center;
+	  background-color:#c5d5cb;
+	  color: white;
+  }
 
 ul.tabRep{
 	margin:0;
@@ -25,132 +45,72 @@ ul.tabRep{
 	text-align:center;
 }
 
-#recap{
-position:fixed;
-float:right;
-top:2%;
-right: 2%;
-margin-left: 1%;
-width: 25%;
-min-width:200px;
-clear:both;
-
-background: rgba(240,250,240,0.6);
-}
-
 #cmd{
 width:75%;
 min-width:400px;
 }
+div.title1{
+font-size: 120%;
+}
 
+div.title2{
+font-size:120%;
+}
 body{
-	background: rgba(180,234,190,0.5);
-	background-image: url("zenBG-1.png"), url("zenBG-2.png");
+	background: #e3dbcf;
 	background-repeat: repeat-x, repeat;
 }
 
 #content{
-background: rgba(240,250,240,0.6);
+background: #e3dbcf;
 min-width:640px;
 margin-left: 10%;
 margin-right: 10%;
 width: 75%;
-
 padding:1%;
 }
 
-p.info{
-	text-align:justify;
-	font-weight: bolder;
-	width: 50%;
-	color: brown;
-}
-
-p.warning{
-	text-align:justify;
-	font-weight: bolder;
-	color: brown;
-}
-
-
-
-div#howto{
-	width: 50%;
-	text-align:justify;
-}
-
 div.inputMer{
-	width: 20%;
+	width: 70%;
 	float: left;
 	filter : alpha(opacity=50);
 	opacity : 1.6;
-	background: rgba(240,250,240,0.6);
+	background: rgba(250,250,250,0.6);
+}
+
+div.loginList{
+	width: 70%;
+    float: none;
+    filter: alpha(opacity=50);
+    opacity: 1.6;
+	background: rgba(250,250,250,0.6);
+	border: 1px solid gray;
+}
+
+div.Login{
+	width: 70%;
+    float: none;
+    filter: alpha(opacity=50);
+    opacity: 1.6;
+	background: rgba(250,250,250,0.6);
+	border: 1px solid gray;
 }
 
 div.inputPatho{
-	background: rgba(240,250,240,0.6);	
+	background: rgba(250,250,250,0.6);	
 }
 
 div.actionPatho{
-	width: 30%;
+	width: 70%;
 	margin-right: 1%;
 	padding: 1%;
-	float: left;
+	float: none;
 	border: 1px solid gray;
-	background: rgba(240,250,240,0.6);
+	background: rgba(250,250,250,0.6);
 }
 
 form li{
 	list-style:none;
-}
-
-#questions input.search {
-padding: 0.5% 0.5%;
-width: 30%;
-height: 2%;
-border: 1px solid #AAA;
-}
-
-#questions input.search:hover, #questions input.search:focus {
-border-color: #777;
-}
-
-#questions div.result {
-display: none;
-width: 31%;
-border: 1px solid #AAA;
-border-top-width: 0;
-background-color: #FFF;
-}
-
-div#questions div.result ul {
-	padding: 0.5% 0.5%;
-	text-align: left;
-	border: 0;
-	background-color: #FFF;
-	margin:0;
-}
-#questions li{
-list-style:none;
-}
-#questions div.result li{
-list-style:none;
-padding-left:1%;
-background-color: #FFF;
-}
-
-#questions div.result li:hover, #questions .result_focus {
-background-color: #DDD !important;
-}
-
-.error{
-	color:red;
-}
-.missing{
-	color:orange;
-}
-.good{
-	color:green;
 }
 
 .img{
@@ -162,10 +122,6 @@ background-color: #DDD !important;
 	margin-left: 5%;
 }
 
-.dev {
-	filter : alpha(opacity=50);
-	opacity : 0.6;
-}
 
 p.imgCmd{
 	text-align: center;
